@@ -17,14 +17,17 @@
 
 int validFlag(char* input);
 int improperUsage();
+int improperName();
 
 int main(int argc,char* argv[]){
 
+  char* lastArg = argv[argc-1];
+
   //check if the command line flags are valid
-  if(argc < 3){
+  if(argc < 3 || argc > 5){
     improperUsage();
   }
-  switch(validFlag(argv[1])){
+  switch(validFlag(argv[1])){   //*****NOTE:: the final argument in recursive may be a codeBook or a PathName, need to add a check here
     case NOTGOOD:
       improperUsage();
       break;
@@ -32,11 +35,15 @@ int main(int argc,char* argv[]){
       if(validFlag(argv[2])==GOOD){
         improperUsage();
       }
+      if(validFlag(argv[2])==FLAGR){
+        recursive(argv[3], argv[1], lastArg);
+      }
       break;
     case FLAGR:
       if(validFlag(argv[2])!=GOOD){
         imrpoperUsage();
       }
+      recursive(argv[3],argv[2],lastArg)
       break;
   }
 
@@ -63,6 +70,11 @@ int validFlag(char* input){
 
 int improperUsage(){
   printf("Bad command line input:\n\t./fileCompressor [-R] [-b or -c or -d] <path or file> |codebook|\n");
+  exit(EXIT_FAILURE);
+  return 1;
+}
+int improperName(char* name){
+  printf("Bad command line input:\n\t%s not a file or directory\n",name);
   exit(EXIT_FAILURE);
   return 1;
 }

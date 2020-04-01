@@ -21,6 +21,7 @@ int decompress(char* fileName,char* codeBook){
   return 0;
 }
 
-int recursive(char* pathName, char flag){
+int recursive(char* pathName, char* flag, char* codeBook){
+  printf("solving recursively!");
   return 0;
 }
