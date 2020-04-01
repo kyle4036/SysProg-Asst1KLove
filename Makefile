@@ -1,17 +1,14 @@
 all: fileCompressor.c
-	gcc fileCompressor fileCompressor.c
+	gcc fileCompressor.c -o fileCompressor
 
-clean: fileCompressor db
+clean:
 	rm fileCompressor; rm db
 
 debug: fileCompressor.c
-	gcc -ggdb db fileCompressor.c
+	gcc -ggdb fileCompressor.c -o db
 
-fileCompressor:
-	touch fileCompressor
+everything: clean all debug
+	echo "done making everything"
 
-db:
-	touch db
-
-run:
+run: fileCompressor
 	./fileCompressor
