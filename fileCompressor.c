@@ -11,7 +11,7 @@
 
 #include "Huffman.h"
 
-#define NOTGOOD
+#define NOTGOOD 0
 #define GOOD 1
 #define FLAGR 2
 
