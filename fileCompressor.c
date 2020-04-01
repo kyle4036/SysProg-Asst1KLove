@@ -35,16 +35,16 @@ int main(int argc,char* argv[]){
 }
 
 int validFlag(char* input){
-  if(strncmp(input, "-b")){
+  if(strncmp(input, "-b",3)){
     return GOOD;
   }
-  else if(strncmp(input, "-c")){
+  else if(strncmp(input, "-c",3)){
     return GOOD;
   }
-  else if(strncmp(input, "-d")){
+  else if(strncmp(input, "-d",3)){
     return GOOD;
   }
-  else if(strncmp(input, "-R")){
+  else if(strncmp(input, "-R",3)){
     return FLAGR;
   }
   else{
