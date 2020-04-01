@@ -12,3 +12,6 @@ fileCompressor:
 
 db:
 	touch db
+
+run:
+	./fileCompressor
