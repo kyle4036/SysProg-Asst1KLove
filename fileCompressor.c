@@ -20,6 +20,8 @@ int improperUsage();
 
 int main(int argc,char* argv[]){
 
+  printf("argc = %d",argc);
+
   //check if the command line flags are valid
   if(argc < 2){
     improperUsage();
