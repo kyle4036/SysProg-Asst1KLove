@@ -20,10 +20,8 @@ int improperUsage();
 
 int main(int argc,char* argv[]){
 
-  printf("argc = %d",argc);
-
   //check if the command line flags are valid
-  if(argc < 2){
+  if(argc < 3){
     improperUsage();
   }
   switch(validFlag(argv[1])){
@@ -31,8 +29,14 @@ int main(int argc,char* argv[]){
       improperUsage();
       break;
     case GOOD:
+      if(validFlag(argv[2])==GOOD){
+        improperUsage();
+      }
       break;
     case FLAGR:
+      if(validFlag(argv[2])!=GOOD){
+        imrpoperUsage();
+      }
       break;
   }
 
