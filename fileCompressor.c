@@ -7,3 +7,5 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <dirent.h>
+
+#include "Huffman.h"
