@@ -11,27 +11,49 @@
 
 #include "Huffman.h"
 
+#define NOTGOOD
+#define GOOD 1
+#define FLAGR 2
+
 int validFlag(char* input);
+int improperUsage();
 
 int main(int argc,char* argv[]){
-  if(argv[1] == "")
+
+  //checks if the command line flags are valid
+  switch(validFlag(argv[1])){
+    case NOTGOOD:
+      improperUsage();
+      break;
+    case GOOD:
+      break;
+    case FLAGR:
+      break;
+  }
+
   return 0;
 }
 
 int validFlag(char* input){
   if(strncmp(input, "-b")){
-    return 1;
+    return GOOD;
   }
   else if(strncmp(input, "-c")){
-    return 1;
+    return GOOD;
   }
   else if(strncmp(input, "-d")){
-    return 1;
+    return GOOD;
   }
   else if(strncmp(input, "-R")){
-    return 2;
+    return FLAGR;
   }
   else{
     return 0;
   }
+}
+
+int improperUsage(){
+  printf("Bad command line input:\n\t./fileCompressor [-R] [-b or -c or -d] <path or file> |codebook|\n");
+  exit(EXIT_FAILURE);
+  return 1;
 }
