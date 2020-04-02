@@ -25,7 +25,7 @@ int decompress(char* fileName,char* codeBook){
 }
 
 int recursive(char* pathName, char* flag, char* codeBook){
-  char* action = flagToString(&flag);
+  char* action = flagToString(flag);
   printf("Recursively %s directory %s!\n",action,pathName);
   return 0;
 }
