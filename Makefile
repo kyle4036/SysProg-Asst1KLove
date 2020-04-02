@@ -1,5 +1,5 @@
 all: fileCompressor.c Huffman.o
-	gcc fileCompressor.c -o fileCompressor
+	gcc fileCompressor.c Huffman.o -o fileCompressor
 
 clean:
 	rm fileCompressor; rm db; rm Huffman.o
