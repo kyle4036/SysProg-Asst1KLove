@@ -85,7 +85,7 @@ int branch(char* flag, char* fileName, char* codeBook){
     if(fd == -1){
       improperName();
     }
-    buildCodeBook(fileName);
+    buildCodeBook(fileName,fd);
     close(fd);
   }
   else if(!strncmp(flag, "-c",3)){
