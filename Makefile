@@ -2,7 +2,7 @@ all: fileCompressor.c Huffman.o lList.o
 	gcc fileCompressor.c Huffman.o -o fileCompressor
 
 clean:
-	rm fileCompressor; rm db; rm Huffman.o
+	rm fileCompressor; rm db; rm Huffman.o;rm lList.o
 
 debug: fileCompressor.c Huffman.o
 	gcc -ggdb fileCompressor.c Huffman.o -o db
