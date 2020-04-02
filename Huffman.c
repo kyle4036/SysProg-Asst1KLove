@@ -17,7 +17,7 @@
 int buildCodeBook(char* fileName, int fd){
   printf("Building codebook for %s!\n", fileName);
   lList data;
-  sortData(data);
+  sortList(data);
   return 0;
 }
 
