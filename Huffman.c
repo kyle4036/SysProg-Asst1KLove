@@ -47,17 +47,17 @@ char* flagToString(char* flag){
     length = strnlen(cString,30);
     char* action = malloc(sizeof(char) * length);
     strncpy(action,cString,length);
-    return action;
+    return (char*)action;
   }
   else if(strncmp(flag, "-d",3)){
     length = strnlen(dString,30);
     char* action = malloc(sizeof(char) * length);
     strncpy(action,dString,length);
-    return action;
+    return (char*)action;
   }
   else{
     printf("Error In flagToString():\n\t Bad flag.\n");
     exit(EXIT_FAILURE);
-    return 0;
+    return (char*)0;
   }
 }
