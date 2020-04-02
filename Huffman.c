@@ -41,23 +41,23 @@ char* flagToString(char* flag){
     length = strnlen(bString,30);
     char* action = malloc(sizeof(char) * length);
     strncpy(action,bString,length);
-    return (char*)action;
+    return action;
   }
   else if(strncmp(flag, "-c",3)){
     length = strnlen(cString,30);
     char* action = malloc(sizeof(char) * length);
     strncpy(action,cString,length);
-    return (char*)action;
+    return action;
   }
   else if(strncmp(flag, "-d",3)){
     length = strnlen(dString,30);
     char* action = malloc(sizeof(char) * length);
     strncpy(action,dString,length);
-    return (char*)action;
+    return action;
   }
   else{
     printf("Error In flagToString():\n\t Bad flag.\n");
     exit(EXIT_FAILURE);
-    return (char*)0;
+    //return (char*)"a";
   }
 }
