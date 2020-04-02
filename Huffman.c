@@ -13,17 +13,17 @@
 
 //char* flagToString(char* flag);
 
-int buildCodeBook(int fileBase){
+int buildCodeBook(char* fileName){
   printf("Building codebook for %s!\n", fileName);
   return 0;
 }
 
-int compress(int fileBase,int codeBook){
+int compress(char* fileName,char* codeBook){
   printf("Compressing %s using %s codebook!\n",fileName, codeBook);
   return 0;
 }
 
-int decompress(int fileBase,int codeBook){
+int decompress(char* fileName,char* codeBook){
   printf("Decompressing %s using %s codebook!\n",fileName, codeBook);
   return 0;
 }
