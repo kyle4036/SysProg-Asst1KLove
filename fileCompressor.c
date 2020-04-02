@@ -81,6 +81,9 @@ int branch(char* flag, char* fileName, char* codeBook){
   //*****NOTE:: need to add checks for fileName and codeBook
 
   if(!strncmp(flag, "-b",3)){
+    if(!access(fileName, R_OK)){
+      improperName();
+    }
     buildCodeBook(fileName);
   }
   else if(!strncmp(flag, "-c",3)){
@@ -98,7 +101,7 @@ int improperUsage(){
   return 1;
 }
 int improperName(char* name){
-  printf("Bad command line input:\n\t%s not a file or directory\n",name);
+  printf("Bad command line input:\n\t%s not a proper file or directory\n",name);
   exit(EXIT_FAILURE);
   return 1;
 }
