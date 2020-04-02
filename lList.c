@@ -11,6 +11,13 @@
 
 #include "lList.h"
 
-lList createList(char* token);
-void sortList(lList data);
-void addToken(lList data,char* token);
+lList createList(char* token){
+
+}
+
+void sortList(lList data){
+  printf("echo");
+}
+void addToken(lList data,char* token){
+
+}
