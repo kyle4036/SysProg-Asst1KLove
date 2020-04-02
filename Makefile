@@ -15,3 +15,6 @@ everything: clean all debug
 
 run: fileCompressor
 	./fileCompressor
+
+test1: fileCompressor
+	./fileCompressor -R -b ./
