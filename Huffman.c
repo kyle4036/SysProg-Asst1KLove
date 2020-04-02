@@ -9,6 +9,8 @@
 #include <errno.h>
 #include <dirent.h>
 
+char* flagToString(char* flag);
+
 int buildCodeBook(char* fileName){
   printf("Building codebook for %s!\n", fileName);
   return 0;
