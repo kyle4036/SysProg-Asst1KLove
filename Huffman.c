@@ -10,6 +10,7 @@
 #include <dirent.h>
 
 #include "Huffman.h"
+#include "lList.h"
 
 //char* flagToString(char* flag);
 
