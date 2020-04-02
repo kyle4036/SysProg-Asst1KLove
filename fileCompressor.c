@@ -44,7 +44,7 @@ int main(int argc,char* argv[]){
       if(validFlag(argv[2])==FLAGR){
         recursive(argv[3], argv[1], lastArg);
       }
-      branch(arv[1],arg[2], lastArg);
+      branch(arv[1],argv[2], lastArg);
       break;
     case FLAGR:
       if(validFlag(argv[2])!=GOOD){
