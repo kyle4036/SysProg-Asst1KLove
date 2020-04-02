@@ -7,9 +7,9 @@
     struct l_node_* prev;
   } l_node;
 
-  typedef struct lList_{struct l_node* head;} lList;
+  typedef struct lList_{struct l_node* head;struct l_node* tail;} lList;
 
-  lList createList(char* token);
+  lList* createList(char* token);
   void sortList(lList data);
   void addToken(lList data,char* token);
 

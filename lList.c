@@ -11,13 +11,26 @@
 
 #include "lList.h"
 
-lList createList(char* token){
+lList* createList(char* token){
+  lList* list = malloc(sizeof(lList));
+  l_node* head = malloc(sizeof(l_node));
 
+  head->token = token;
+  head->freq = 1;
+  head->next = NULL;
+  head->prev = NULL;
+
+  list->head = head;
+  list->tail = tail;
+
+  return list;
 }
 
 void sortList(lList data){
-  printf("echo");
+  //defunct
 }
+
+
 void addToken(lList data,char* token){
 
 }
