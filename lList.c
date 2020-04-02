@@ -21,7 +21,7 @@ lList* createList(char* token){
   head->prev = NULL;
 
   list->head = head;
-  list->tail = tail;
+  list->tail = head;
 
   return list;
 }
