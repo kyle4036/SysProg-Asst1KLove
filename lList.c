@@ -32,7 +32,8 @@ lList* createList(char* token){
 }
 
 void freeList(lList* data){
-  while(!isempty(data) && (data->tail)->next != NULL){
+  l_node* temp = data->tail;
+  while(!isempty(data) && temp->next != NULL){
     removeTail(data);
   }
   free(data);
