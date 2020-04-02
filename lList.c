@@ -15,21 +15,35 @@ lList* createList(char* token){
   lList* list = malloc(sizeof(lList));
   l_node* head = malloc(sizeof(l_node));
 
+  if(list == NULL || head == NULL){
+    printf("Error generating space in createList()\n");
+    exit(EXIT_FAILURE);
+  }
+
   head->token = token;
   head->freq = 1;
   head->next = NULL;
   head->prev = NULL;
 
-  list->head = (l_node*)head;
-  list->tail = (l_node*)head;
+  list->head = head;
+  list->tail = head;
 
   return list;
 }
 
+void freeList(lList* data){
+
+}
+
+void removeTail(lList* data){
+
+}
+
+/*
 void sortList(lList data){
   //defunct
 }
-
+*/
 
 void addToken(lList data,char* token){
 

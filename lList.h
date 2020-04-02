@@ -11,7 +11,10 @@
   typedef struct lList_{struct l_node* head;struct l_node* tail;} lList;
 
   lList* createList(char* token);
-  void sortList(lList data);
+  void freeList(lList* data);
+  void removeTail(lList* data);
+
+  //void sortList(lList data);
   void addToken(lList data,char* token);
 
 //debugging options
