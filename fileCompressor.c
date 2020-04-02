@@ -41,7 +41,7 @@ int main(int argc,char* argv[]){
       break;
     case FLAGR:
       if(validFlag(argv[2])!=GOOD){
-        imrpoperUsage();
+        improperUsage();
       }
       recursive(argv[3],argv[2],lastArg);
       break;
