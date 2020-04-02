@@ -78,14 +78,14 @@ int validFlag(char* input){
 //split off into the different functions based on the input
 int branch(char* flag, char* fileName, char* codeBook){
 
-  //*****NOTE:: need to add checks for fileName and codeBook
+  //*****NOTE:: need to add checks for fileName and codeBook in compress and decompress
 
   if(!strncmp(flag, "-b",3)){
     int fd = open(fileName, O_RDONLY);
     if(fd == -1){
       improperName();
     }
-    buildCodeBook(fileName);
+    buildCodeBook(fd);
     close(fd);
   }
   else if(!strncmp(flag, "-c",3)){
