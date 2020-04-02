@@ -6,8 +6,8 @@
     struct l_node_* next;
     struct l_node_* prev;
   } l_node;
-  
-  typedef struct lList_{structl_node* head;} lList;
+
+  typedef struct lList_{struct l_node* head;} lList;
 
   lList createList(char* token);
   void sortList(lList data);
