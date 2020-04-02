@@ -79,14 +79,14 @@ int validFlag(char* input){
 int branch(char* flag, char* fileName, char* codeBook){
 
   //*****NOTE:: need to add checks for fileName and codeBook
-  
-  if(!strncmp(input, "-b",3)){
+
+  if(!strncmp(flag, "-b",3)){
     buildCodeBook(fileName);
   }
-  else if(!strncmp(input, "-c",3)){
+  else if(!strncmp(flag, "-c",3)){
     compress(fileName, codeBook);
   }
-  else if(!strncmp(input, "-d",3)){
+  else if(!strncmp(flag, "-d",3)){
     decompress(fileName, codeBook);
   }
   return 0;
