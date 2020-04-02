@@ -13,7 +13,7 @@
 
 //char* flagToString(char* flag);
 
-int buildCodeBook(char* fileName){
+int buildCodeBook(char* fileName, int fd){
   printf("Building codebook for %s!\n", fileName);
   return 0;
 }
