@@ -16,6 +16,8 @@
 #define FLAGR 2
 
 int validFlag(char* input);
+int branch(char* flag, char* fileName, char* codeBook);
+
 int improperUsage();
 int improperName();
 
@@ -27,7 +29,11 @@ int main(int argc,char* argv[]){
   if(argc < 3 || argc > 5){
     improperUsage();
   }
-  switch(validFlag(argv[1])){   //*****NOTE:: the final argument in recursive may be a codeBook or a PathName, need to add a check here
+
+  //*****NOTE:: the final argument in recursive
+  //            may be a codeBook or a PathName,
+  //  need to add a check somewhere here
+  switch(validFlag(argv[1])){
     case NOTGOOD:
       improperUsage();
       break;
@@ -38,6 +44,7 @@ int main(int argc,char* argv[]){
       if(validFlag(argv[2])==FLAGR){
         recursive(argv[3], argv[1], lastArg);
       }
+      branch(arv[1],arg[2], lastArg);
       break;
     case FLAGR:
       if(validFlag(argv[2])!=GOOD){
@@ -66,6 +73,23 @@ int validFlag(char* input){
   else{
     return 0;
   }
+}
+
+//split off into the different functions based on the input
+int branch(char* flag, char* fileName, char* codeBook){
+
+  //*****NOTE:: need to add checks for fileName and codeBook
+  
+  if(!strncmp(input, "-b",3)){
+    buildCodeBook(fileName);
+  }
+  else if(!strncmp(input, "-c",3)){
+    compress(fileName, codeBook);
+  }
+  else if(!strncmp(input, "-d",3)){
+    decompress(fileName, codeBook);
+  }
+  return 0;
 }
 
 int improperUsage(){
