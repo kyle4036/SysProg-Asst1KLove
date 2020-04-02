@@ -43,7 +43,7 @@ int main(int argc,char* argv[]){
       if(validFlag(argv[2])!=GOOD){
         imrpoperUsage();
       }
-      recursive(argv[3],argv[2],lastArg)
+      recursive(argv[3],argv[2],lastArg);
       break;
   }
 
