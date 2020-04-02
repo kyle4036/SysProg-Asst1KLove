@@ -16,6 +16,7 @@
 
   //void sortList(lList data);
   void addToken(lList* data,char* token);
+  void addNode(lList* data,char* token);
   int isempty(lList* data);
 
 //debugging options

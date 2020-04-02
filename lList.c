@@ -35,6 +35,7 @@ void freeList(lList* data){
   l_node* temp = data->tail;
   while(!isempty(data) && temp->next != NULL){
     removeTail(data);
+    temp = data->tail;
   }
   free(data);
 }
@@ -53,14 +54,31 @@ void sortList(lList data){
 */
 
 void addToken(lList* data,char* token){
+  l_node* temp = data->head;
 
+  while(strncmp(token, temp->token, 50) && temp->prev != NULL)
+    temp = temp->prev;
+
+  if(!strncmp(token, temp->token, 50)){
+    temp->freq++;
+  }
+  else{
+    addNode(data,token);
+  }
+
+}
+
+void addNode(lList* data,char* token){
+  l_node* temp = createl_node(token);
+  temp->next = data->tail;
+  data->tail = temp;
 }
 
 int isempty(lList* data){
   if(data->tail == NULL)
-    return 0;
-  else
     return 1;
+  else
+    return 0;
 }
 
 //debugging
