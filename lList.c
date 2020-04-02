@@ -41,7 +41,7 @@ void freeList(lList* data){
 //Note:does not currently adjust the new tail previous l_node
 void removeTail(lList* data){
   l_node* temp = data->tail;
-  data->tail = data->tail->next;
+  data->tail = temp->next;
   free(temp);
 }
 
