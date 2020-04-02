@@ -18,3 +18,6 @@ run: fileCompressor
 
 test1: fileCompressor
 	./fileCompressor -R -b ./
+
+test2: fileCompressor
+	./fileCompressor -b brownFox
