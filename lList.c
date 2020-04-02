@@ -32,11 +32,17 @@ lList* createList(char* token){
 }
 
 void freeList(lList* data){
-
+  while(!isempty(data) && data->tail->next != NULL){
+    removeTail(data);
+  }
+  free(data);
 }
 
+//Note:does not currently adjust the new tail previous l_node
 void removeTail(lList* data){
-
+  l_node* temp = data->tail;
+  data->tail = data->tail->next;
+  free(temp);
 }
 
 /*
@@ -45,8 +51,15 @@ void sortList(lList data){
 }
 */
 
-void addToken(lList data,char* token){
+void addToken(lList* data,char* token){
 
+}
+
+int isempty(lList* data){
+  if(data->tail == NULL)
+    return 0;
+  else
+    return 1;
 }
 
 //debugging

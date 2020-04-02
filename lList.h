@@ -15,7 +15,8 @@
   void removeTail(lList* data);
 
   //void sortList(lList data);
-  void addToken(lList data,char* token);
+  void addToken(lList* data,char* token);
+  int isempty(lList* data);
 
 //debugging options
   l_node* createl_node(char* token);
