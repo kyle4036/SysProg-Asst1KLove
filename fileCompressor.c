@@ -81,10 +81,12 @@ int branch(char* flag, char* fileName, char* codeBook){
   //*****NOTE:: need to add checks for fileName and codeBook
 
   if(!strncmp(flag, "-b",3)){
-    if(!access(fileName, R_OK)){
+    int fd = open(fileName, O_RDONLY);
+    if(fd == -1)){
       improperName();
     }
     buildCodeBook(fileName);
+    close(fd)
   }
   else if(!strncmp(flag, "-c",3)){
     compress(fileName, codeBook);
