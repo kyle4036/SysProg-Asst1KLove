@@ -36,13 +36,7 @@ void addToken(lList data,char* token){
 }
 
 //debugging
-l_node* createl_node(){
-  l_node* node = malloc(sizeof(l_node));
-  node->freq = 1;
-  node->next = NULL;
-  node->prev = NULL;
-  return node;
-}
+
 l_node* createl_node(char* token){
   l_node* node = malloc(sizeof(l_node));
   node->token = token;

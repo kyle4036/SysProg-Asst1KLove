@@ -15,7 +15,6 @@
   void addToken(lList data,char* token);
 
 //debugging options
-  l_node* createl_node();
   l_node* createl_node(char* token);
 
 #endif
