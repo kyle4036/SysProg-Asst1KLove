@@ -20,8 +20,8 @@ lList* createList(char* token){
   head->next = NULL;
   head->prev = NULL;
 
-  list->head = head;
-  list->tail = head;
+  list->head = (l_node*)head;
+  list->tail = (l_node*)head;
 
   return list;
 }
