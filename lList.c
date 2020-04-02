@@ -32,7 +32,7 @@ lList* createList(char* token){
 }
 
 void freeList(lList* data){
-  while(!isempty(data) && data->tail->next != NULL){
+  while(!isempty(data) && (data->tail)->next != NULL){
     removeTail(data);
   }
   free(data);
