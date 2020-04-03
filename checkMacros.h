@@ -14,7 +14,7 @@
 
 #define CHECKMALLOC(x) do{\
     if((x) == NULL){\
-        printf("In - %s\nFunction - %s\nLine# %d",__FILE__,__FUNC__,(__LINE__)-1);\
+        printf("In - %s\nFunction - %s\nLine# %d",__FILE__,__func__,(__LINE__)-1);\
         printf(":\n\tCouldn't malloc() on line %d! Exiting...",(__LINE__)-1);\
         exit(1);\
     }\
