@@ -125,15 +125,19 @@ l_node* createl_node(char* token){
   return node;
 }
 l_node* next(l_node* node){
+  printl_node(node->next);
   return node->next;
 }
 l_node* prev(l_node* node){
+  printl_node(node->prev);
   return node->prev;
 }
 l_node* head(lList* list){
+  printl_node(list->head);
   return list->head;
 }
 l_node* tail(lList* list){
+  printl_node(list->tail);
   return list->tail;
 }
 void printl_node(l_node* node){
