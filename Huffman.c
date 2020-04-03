@@ -20,6 +20,24 @@ int buildCodeBook(char* fileName, int fd){
   return 0;
 }
 
+lList* readInData(int fd){
+  int count = 1;
+  char charTemp;
+  while(count != 1){
+    count = read(fd,&charTemp,sizeof(char));
+
+    if(count == -1){
+      printf("Cannot Read File: ");
+      switch(errno){
+        case EINVAL: printf("File unsuitable for reading.\n"); exit(1);
+        default : printf("Kernel or program error.\n"); exit(1);
+      }
+    }
+
+
+  }
+}
+
 int compress(char* fileName,char* codeBook){
   printf("Compressing %s using %s codebook!\n",fileName, codeBook);
   return 0;
