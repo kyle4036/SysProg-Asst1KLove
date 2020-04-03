@@ -16,6 +16,9 @@ int main(int argc, char* argv){
   addToken(list,"b");
   addToken(list,"b");
 
+  printlList(list);
+  printl_node(list->tail);
+
   //printf("echo");
   return 0;
 }
