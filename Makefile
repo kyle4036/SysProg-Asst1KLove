@@ -17,7 +17,7 @@ d_Huffman.o: Huffman.c d_lList.o
 	gcc -ggdb -c Huffman.c
 
 d_lList.o: lList.c
-	gcc -ggdb lList.c
+	gcc -ggdb -c lList.c
 
 everything: clean all debug
 	echo "done making everything"
