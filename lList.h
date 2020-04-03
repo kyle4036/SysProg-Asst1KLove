@@ -23,5 +23,7 @@
   l_node* createl_node(char* token);
   void printl_node(l_node* node);
   void printlList(lList* list);
+  l_node* next(l_node* node);
+  l_node* prev(l_node* node);
 
 #endif
