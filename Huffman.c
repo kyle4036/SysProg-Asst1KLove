@@ -26,6 +26,8 @@ lList* readInData(int fd){
   while(count != 1){
     count = read(fd,&charTemp,sizeof(char));
 
+    CHECKREAD(count);
+
     if(count == -1){
       printf("Cannot Read File: ");
       switch(errno){
