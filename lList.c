@@ -151,7 +151,7 @@ l_node* tail(lList* list){
   return list->tail;
 }
 void printl_node(l_node* node){
-  printf("token - %s\nfreq - %d\nnext - %x\nprev - %x\n",
+  printf("token - '%s'\nfreq - %d\nnext - %x\nprev - %x\n",
           node->token, node->freq, node->next, node->prev);
 }
 void printlList(lList* list){
