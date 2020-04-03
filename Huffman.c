@@ -44,7 +44,7 @@ lList* readInData(int fd){
   while(count != 0){
     count = read(fd,&charTemp,sizeof(char));
 
-    CHECKREAD(count);//macro defined in Huffman.h
+    CHECKREAD(count);
 
     if(charTemp == ' '){
       addToken(minHeap, spcPntr);
