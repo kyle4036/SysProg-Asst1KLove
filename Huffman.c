@@ -33,8 +33,8 @@ lList* readInData(int fd){
   *spcPntr = " ";
 
   char** stringTemp;
-  int stringLen = 0;
-  stringTemp = malloc(sizeof(char*));
+  int stringLen = 2;
+  stringTemp = malloc(sizeof(char*) * stringLen);
   CHECKMALLOC(stringTemp);
 
   lList* minHeap;
@@ -44,7 +44,7 @@ lList* readInData(int fd){
 
   *charPntr = charTemp;
   minHeap = createList(charPntr);
-  strncat(stringTemp,&charTemp,1);
+  strncat(*stringTemp,&charTemp,1);
 
   while(count != 0){
     count = read(fd,&charTemp,sizeof(char));
