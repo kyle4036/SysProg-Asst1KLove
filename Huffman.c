@@ -54,7 +54,7 @@ lList* readInData(int fd){
       addToken(minHeap, spcPntr);
       addToken(minHeap,*stringTemp);
 
-      free(*stringTemp);
+      //free(*stringTemp);
       stringTemp = malloc(sizeof(char*));
       CHECKMALLOC(stringTemp);
 
