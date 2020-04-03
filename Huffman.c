@@ -21,7 +21,7 @@ int buildCodeBook(char* fileName, int fd){
   return 0;
 }
 
-void* readInData(int fd){
+lList* readInData(int fd){
   int count;
   char charTemp;
 
