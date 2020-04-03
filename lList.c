@@ -66,13 +66,16 @@ void addToken(lList* data,char* token){
   while(strncmp(token, temp->token, 50) && temp->prev != NULL)
     temp = temp->prev;
 
-  if(!strncmp(token, temp->token, 50)){
+  if(!strncmp(token, temp->token, 50) && data->head != data->tail){
     l_node* next = temp->next;
 
     temp->freq++;
 
     if(temp->freq > next->freq)
       swapAdj(temp,next,data);
+  }
+  else if(!strncmp(token, temp->token, 50) && data->head == data->tail){
+    temp->freq++;
   }
   else{
     addNode(data,token);
@@ -151,6 +154,7 @@ l_node* tail(lList* list){
   return list->tail;
 }
 void printl_node(l_node* node){
+  if
   printf("token - '%s'\nfreq - %d\nnext - %x\nprev - %x\n",
           node->token, node->freq, node->next, node->prev);
 }
