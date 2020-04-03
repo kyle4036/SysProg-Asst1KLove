@@ -75,7 +75,7 @@ void addNode(lList* data,char* token){
 }
 
 int isempty(lList* data){
-  if(data->tail == NULL)
+  if(data->head == NULL)
     return 1;
   else
     return 0;
