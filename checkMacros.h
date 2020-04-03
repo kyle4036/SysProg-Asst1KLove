@@ -12,7 +12,7 @@
 }while(0)\
 
 #define CHECKMALLOC(x) do{\
-  if(x == NULL){\
+  if((x) == NULL){\
     printf("Couldn't malloc() on line %d! Exiting...",(__LINE__)-1);\
     exit(1);\
   }\
