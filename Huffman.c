@@ -36,6 +36,7 @@ lList* readInData(int fd){
   int stringLen = 0;
   stringTemp = malloc(sizeof(char*));
   CHECKMALLOC(stringTemp);
+  *stringTemp = "";
 
   lList* minHeap;
 
