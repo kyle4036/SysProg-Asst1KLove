@@ -17,13 +17,16 @@
 
 int buildCodeBook(char* fileName, int fd){
   printf("Building codebook for %s!\n", fileName);
-  lList* data = createList("a");
+
+  lList* minHeap = readInData(fd);
   return 0;
 }
 
 lList* readInData(int fd){
   int count;
   char charTemp;
+  char* charPntr = malloc(sizeof(char));
+  CHECKMALLOC(charPntr);
 
   char* spcPntr = malloc(sizeof(char)*strnlen(" ", 5));
   CHECKMALLOC(spcPntr);
@@ -39,7 +42,8 @@ lList* readInData(int fd){
   count = read(fd,&charTemp,sizeof(char));
   CHECKREAD(count);
 
-  minHeap = createList(charTemp);
+  *charPntr = charTemp;
+  minHeap = createList(charPntr);
 
   while(count != 0){
     count = read(fd,&charTemp,sizeof(char));
