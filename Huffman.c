@@ -43,7 +43,7 @@ lList* readInData(int fd){
   CHECKREAD(count);
 
   *charPntr = charTemp;
-  minHeap = createList(charPntr);
+  minHeap = createList(spcPntr);
 
   *stringTemp = malloc(sizeof(char*) * stringLen);
   CHECKMALLOC(*stringTemp);
