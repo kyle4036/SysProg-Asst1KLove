@@ -72,7 +72,7 @@ void addToken(lList* data,char* token){
 
             temp->freq++;
 
-            if(temp->freq > next->freq)
+            if(next != NULL && temp->freq > next->freq)
                 swapAdj(temp,next,data);
         }
         else if(data->head == data->tail)
