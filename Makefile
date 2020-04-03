@@ -27,7 +27,7 @@ test2: fileCompressor
 	./fileCompressor -b brownFox
 
 testlList: lListTest
-	./lListTest
+	gdb lListTest
 
 lListTest: lListTest.c lList.o
 	gcc -ggdb lListTest.c lList.o -o lListTest
