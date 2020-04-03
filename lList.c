@@ -11,6 +11,8 @@
 
 #include "lList.h"
 
+//self organising linked list
+
 lList* createList(char* token){
   lList* list = malloc(sizeof(lList));
   l_node* head = malloc(sizeof(l_node));
