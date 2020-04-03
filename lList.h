@@ -18,6 +18,7 @@
   void addToken(lList* data,char* token);
   void addNode(lList* data,char* token);
   int isempty(lList* data);
+  void swap(l_node* a,l_node* b,lList* data);
 
 //debugging options
   l_node* createl_node(char* token);
