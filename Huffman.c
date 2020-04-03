@@ -61,7 +61,7 @@ lList* readInData(int fd){
       stringLen = 0;
     }
     else{
-      stringLen++;     //Note::Currently need to make the strings
+      stringLen++;
       catString(stringTemp,stringLen,charTemp);
     }
   }
