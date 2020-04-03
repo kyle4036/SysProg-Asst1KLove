@@ -48,12 +48,12 @@ lList* readInData(int fd){
 
     if(charTemp == ' '){
       addToken(minHeap, spcPntr);
-      free(*stringTemp);
+      addToken(minHeap,**stringTemp);
+      free(**stringTemp);
     }
     else{
-      stringLen++;
+      stringLen++;     //Note::Currently need to make the strings
       free(*stringTemp);
-
     }
   }
 }
