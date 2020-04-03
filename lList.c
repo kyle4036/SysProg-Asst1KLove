@@ -56,6 +56,7 @@ void sortList(lList data){
 void addToken(lList* data,char* token){
   l_node* temp = data->head;
 
+  int test1 = strncmp(token, temp->token, 50);
   while(strncmp(token, temp->token, 50) && temp->prev != NULL)
     temp = temp->prev;
 
