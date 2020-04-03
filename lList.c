@@ -102,6 +102,7 @@ void swap(l_node* a,l_node* b,lList* data){
 void addNode(lList* data,char* token){
   l_node* temp = createl_node(token);
   temp->next = data->tail;
+  data->tail->prev = temp;
   data->tail = temp;
 }
 
