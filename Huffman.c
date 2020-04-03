@@ -25,8 +25,6 @@ int buildCodeBook(char* fileName, int fd){
 lList* readInData(int fd){
   int count;
   char charTemp;
-  char* charPntr = malloc(sizeof(char));
-  CHECKMALLOC(charPntr);
 
   char* spcPntr = malloc(sizeof(char)*strnlen(" ", 5));
   CHECKMALLOC(spcPntr);
@@ -42,7 +40,6 @@ lList* readInData(int fd){
   count = read(fd,&charTemp,sizeof(char));
   CHECKREAD(count);
 
-  *charPntr = charTemp;
   minHeap = createList(spcPntr);
 
   *stringTemp = malloc(sizeof(char*) * stringLen);
