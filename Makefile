@@ -4,14 +4,20 @@ all: fileCompressor.c Huffman.o lList.o
 clean:
 	rm fileCompressor; rm db; rm Huffman.o; rm lList.o; rm lListTest;
 
-debug: fileCompressor.c Huffman.o
+debug: fileCompressor.c d_Huffman.o d_lList.o
 	gcc -ggdb fileCompressor.c Huffman.o lList.o -o db
 
 Huffman.o: Huffman.c lList.o
 	gcc -c Huffman.c
 
 lList.o: lList.c
-	gcc -ggdb -c lList.c
+	gcc -c lList.c
+
+d_Huffman.o: Huffman.c d_lList.o
+	gcc -ggdb -c Huffman.c
+
+d_lList.o: lList.c
+	gcc -ggdb lList.c
 
 everything: clean all debug
 	echo "done making everything"
