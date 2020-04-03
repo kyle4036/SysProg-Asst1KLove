@@ -2,7 +2,8 @@ all: fileCompressor.c Huffman.o lList.o
 	gcc fileCompressor.c Huffman.o lList.o -o fileCompressor
 
 clean:
-	rm fileCompressor; rm db; rm Huffman.o;rm lList.o
+	rm fileCompressor; rm db; rm Huffman.o;
+	rm lList.o;rm lListTest;
 
 debug: fileCompressor.c Huffman.o
 	gcc -ggdb fileCompressor.c Huffman.o lList.o -o db
@@ -24,3 +25,9 @@ test1: fileCompressor
 
 test2: fileCompressor
 	./fileCompressor -b brownFox
+
+testlList: lListTest
+	./lListTest
+
+lListTest: lListTest.c lList.o
+	gcc -ggdb lListTest.c lList.o -o lListTest
