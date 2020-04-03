@@ -137,12 +137,12 @@ l_node* createl_node(char* token){
     return node;
 }
 l_node* next(l_node* node){
-    CHECKNEXT(node);
+    CHECKNEXT(node->next);
     printl_node(node->next);
     return node->next;
 }
 l_node* prev(l_node* node){
-    CHECKPREV(node);
+    CHECKPREV(node->prev);
     printl_node(node->prev);
     return node->prev;
 }
