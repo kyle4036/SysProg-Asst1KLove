@@ -154,7 +154,6 @@ l_node* tail(lList* list){
   return list->tail;
 }
 void printl_node(l_node* node){
-  if
   printf("token - '%s'\nfreq - %d\nnext - %x\nprev - %x\n",
           node->token, node->freq, node->next, node->prev);
 }
