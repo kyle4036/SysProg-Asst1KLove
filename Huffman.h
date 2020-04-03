@@ -17,7 +17,7 @@
         case EINVAL: printf("File unsuitable for reading.\n"); exit(1);\
         default : printf("Kernel or program error.\n"); exit(1);\
       }\
-    }
-  }while(0)
+    }\
+  }while(0)\
 
 #endif
