@@ -29,4 +29,18 @@
   l_node* head(lList* list);
   l_node* tail(lList* list);
 
+  #define CHECKPREV(x) do{\
+    if((x) == NULL){\
+      printf("Couldn't prev() on line %d! value null...",(__LINE__)-1);\
+      return NULL;\
+    }\
+  }while(0)\
+
+  #define CHECKNEXT(x) do{\
+    if((x) == NULL){\
+      printf("Couldn't next() on line %d! value null...",(__LINE__)-1);\
+      return NULL;\
+    }\
+  }while(0)\
+
 #endif
