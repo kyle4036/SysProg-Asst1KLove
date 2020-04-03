@@ -91,6 +91,7 @@ l_node* createl_node(char* token){
   node->prev = NULL;
   return node;
 }
-void printl_node(l_node*){
-  printf("token - %s\nfreq - %d\nnext - %x\nprev - %x\n");
+void printl_node(l_node* node){
+  printf("token - %s\nfreq - %d\nnext - %x\nprev - %x\n",
+          node->token, node->freq, node->next, node->prev);
 }
