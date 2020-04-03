@@ -9,6 +9,7 @@
   int recursive(char* pathName, char* flag,char* codeBook);
 
   lList* readInData(int fd);
+  void catString(char** stringO,int stringLen,char charTemp);
 
   char* flagToString(char* flag);
 
