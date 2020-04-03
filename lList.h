@@ -25,5 +25,7 @@
   void printlList(lList* list);
   l_node* next(l_node* node);
   l_node* prev(l_node* node);
+  l_node* head(lList* list);
+  l_node* tail(lList* list);
 
 #endif

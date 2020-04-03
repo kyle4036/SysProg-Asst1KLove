@@ -97,6 +97,12 @@ l_node* next(l_node* node){
 l_node* prev(l_node* node){
   return node->prev;
 }
+l_node* head(lList* list){
+  return list->head;
+}
+l_node* tail(lList* list){
+  return list->tail;
+}
 void printl_node(l_node* node){
   printf("token - %s\nfreq - %d\nnext - %x\nprev - %x\n",
           node->token, node->freq, node->next, node->prev);
