@@ -10,12 +10,15 @@
 #include <dirent.h>
 
 #include "lList.h"
+#include "checkMacros.h"
 
 //self organising linked list
 
 lList* createList(char* token){
   lList* list = malloc(sizeof(lList));
+  CHECKMALLOC(list);
   l_node* head = malloc(sizeof(l_node));
+  CHECKMALLOC(head);
 
   if(list == NULL || head == NULL){
     printf("Error generating space in createList()\n");
@@ -122,6 +125,7 @@ int isempty(lList* data){
 
 l_node* createl_node(char* token){
   l_node* node = malloc(sizeof(l_node));
+  CHECKMALLOC(node);
   node->token = token;
   node->freq = 1;
   node->next = NULL;

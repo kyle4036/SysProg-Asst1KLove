@@ -11,6 +11,7 @@
 
 #include "Huffman.h"
 #include "lList.h"
+#include "checkMacros.h"
 
 //char* flagToString(char* flag);
 
