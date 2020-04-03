@@ -22,5 +22,6 @@
 //debugging options
   l_node* createl_node(char* token);
   void printl_node(l_node* node);
+  void printlList(lList* list);
 
 #endif

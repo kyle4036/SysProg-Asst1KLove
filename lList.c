@@ -95,3 +95,6 @@ void printl_node(l_node* node){
   printf("token - %s\nfreq - %d\nnext - %x\nprev - %x\n",
           node->token, node->freq, node->next, node->prev);
 }
+void printlList(lList* list){
+  printf("head - %x\ntail - %x\n",list->head,list->tail);
+}
