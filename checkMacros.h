@@ -3,7 +3,7 @@
 
 #define CHECKREAD(x) do{\
     if((x) == -1){\
-        printf("In - %s\nFunction - %s\nLine# %d",__FILE__,__FUNC__,(__LINE__)-1);\
+        printf("In - %s\nFunction - %s\nLine# %d",__FILE__,__func__,(__LINE__)-1);\
         printf(":\n\tCannot Read File: ");\
         switch(errno){\
             case EINVAL: printf("File unsuitable for reading.\n"); exit(1);\
