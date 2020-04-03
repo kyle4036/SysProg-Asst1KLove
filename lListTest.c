@@ -14,7 +14,8 @@
 int main(int argc, char* argv){
   lList* list = createList("a");
   addToken(list,"b");
-  
+  addToken(list,"b");
+
   //printf("echo");
   return 0;
 }
