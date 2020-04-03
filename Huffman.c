@@ -26,28 +26,28 @@ lList* readInData(int fd){
   int count;
   char charTemp;
   char* charPntr = malloc(sizeof(char));
-  CHECKMALLOC(charPntr)
+  CHECKMALLOC(charPntr);
 
   char* spcPntr = malloc(sizeof(char)*strnlen(" ", 5));
-  CHECKMALLOC(spcPntr)
+  CHECKMALLOC(spcPntr);
   *spcPntr = " ";
 
   char** stringTemp;
   int stringLen = 0;
   stringTemp = malloc(sizeof(char*));
-  CHECKMALLOC(stringTemp)
+  CHECKMALLOC(stringTemp);
 
   lList* minHeap;
 
   count = read(fd,&charTemp,sizeof(char));
-  CHECKREAD(count)
+  CHECKREAD(count);
 
   *charPntr = charTemp;
   minHeap = createList(charPntr);
 
   while(count != 0){
     count = read(fd,&charTemp,sizeof(char));
-    CHECKREAD(count)
+    CHECKREAD(count);
 
     if(charTemp == ' '){
       addToken(minHeap, spcPntr);
@@ -64,7 +64,7 @@ lList* readInData(int fd){
 
 void catString(char** stringO,int stringLen,char charTemp){
   char* stringTemp = malloc(sizeof(char)* stringLen);
-  CHECKMALLOC(stringTemp)
+  CHECKMALLOC(stringTemp);
   strncpy(stringTemp, stringO,stringLen);
   strncat(stringTemp, &charTemp,1);
   free(*stringO);
