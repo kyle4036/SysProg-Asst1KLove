@@ -52,7 +52,11 @@ lList* readInData(int fd){
     if(charTemp == ' '){
       addToken(minHeap, spcPntr);
       addToken(minHeap,*stringTemp);
+
       free(*stringTemp);
+      stringTemp = malloc(sizeof(char*));
+      CHECKMALLOC(stringTemp);
+
       stringLen = 0;
     }
     else{
