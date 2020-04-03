@@ -23,9 +23,15 @@ int buildCodeBook(char* fileName, int fd){
 lList* readInData(int fd){
   int count;
   char charTemp;
+
   char* spcPntr = malloc(sizeof(char)*strnlen(" ", 5));
+  CHECKMALLOC(spcPntr);
   *spcPntr = " ";
+
   char** stringTemp;
+  int stringLen = 0;
+  stringTemp = malloc(sizeof(char*));
+  CHECKMALLOC(stringTemp);
 
   lList* minHeap;
 
@@ -41,9 +47,12 @@ lList* readInData(int fd){
 
     if(charTemp == ' '){
       addToken(minHeap, spcPntr);
+      free(*stringTemp);
     }
     else{
-      
+      stringLen++;
+      free(*stringTemp);
+
     }
   }
 }
