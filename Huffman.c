@@ -58,7 +58,14 @@ lList* readInData(int fd){
       stringTemp = malloc(sizeof(char*));
       CHECKMALLOC(stringTemp);
 
-      stringLen = 0;
+      stringLen = 2;
+
+      *stringTemp = malloc(sizeof(char*) * stringLen);
+      CHECKMALLOC(*stringTemp);
+
+      count = read(fd,&charTemp,sizeof(char));
+      CHECKREAD(count);
+      strncat(*stringTemp,&charTemp,1);
     }
     else{
       stringLen++;
