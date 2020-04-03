@@ -46,6 +46,7 @@ void freeList(lList* data){
 void removeTail(lList* data){
   l_node* temp = data->tail;
   data->tail = temp->next;
+  free(temp->token);
   free(temp);
 }
 

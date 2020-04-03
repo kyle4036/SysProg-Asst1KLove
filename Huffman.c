@@ -21,23 +21,30 @@ int buildCodeBook(char* fileName, int fd){
 }
 
 lList* readInData(int fd){
-  int count = 1;
+  int count;
   char charTemp;
-  while(count != 1){
+  char* spcPntr = malloc(sizeof(char)*strnlen(" ", 5));
+  *spcPntr = " ";
+  char** stringTemp;
+
+  lList* minHeap;
+
+  count = read(fd,&charTemp,sizeof(char));
+  CHECKREAD(count);
+
+  minHeap = createList(charTemp);
+
+  while(count != 0){
     count = read(fd,&charTemp,sizeof(char));
 
-    //CHECKREAD(count);Start
-    CHECKREAD(count);
-    //CHECKREAD(count);Done
-    if(count == -1){
-      printf("Cannot Read File: ");
-      switch(errno){
-        case EINVAL: printf("File unsuitable for reading.\n"); exit(1);
-        default : printf("Kernel or program error.\n"); exit(1);
-      }
+    CHECKREAD(count);//macro defined in Huffman.h
+
+    if(charTemp == ' '){
+      addToken(minHeap, spcPntr);
     }
-
-
+    else{
+      
+    }
   }
 }
 
