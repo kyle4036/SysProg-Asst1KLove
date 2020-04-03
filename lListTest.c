@@ -12,6 +12,9 @@
 #include "lList.h"
 
 int main(int argc, char* argv){
-  printf("echo");
+  lList* list = createList("a");
+  addToken(list,"b");
+  
+  //printf("echo");
   return 0;
 }
