@@ -10,6 +10,7 @@
 #include <dirent.h>
 
 #include "Huffman.h"
+#include "hTree.c"
 #include "lList.h"
 #include "checkMacros.h"
 
