@@ -27,7 +27,7 @@ lList* readInData(int fd){
     int count;
     char charTemp;
 
-    char* spacePntr = malloc(sizeof(char)*strnlen(" ", 5));
+    char* spacePntr = malloc(sizeof(char)*5);
     CHECKMALLOC(spacePntr);
     *spacePntr = " ";
 
