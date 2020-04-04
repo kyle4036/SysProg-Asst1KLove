@@ -1,4 +1,5 @@
 #include "lList.h"
+#include "hTree.h"
 
 #ifndef HUFFMAN_H
 #define HUFFMAN_H
