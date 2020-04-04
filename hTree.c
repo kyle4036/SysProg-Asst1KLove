@@ -132,7 +132,7 @@ void printhList(lList* list){
         CHECKPREV(temp);//damn something broke
         printf("#%d:",i++);
         printhTree(temp->token);
-        temp = prev(temp);
+        temp = temp->prev;
     }
 }
 
