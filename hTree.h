@@ -3,6 +3,9 @@
 #ifndef HTREE_H
 #define HTREE_H
 
+    #define LEAF 1
+    #define BRANCH 0
+
     typedef struct h_node_{
         int leaf;
         int freq;
