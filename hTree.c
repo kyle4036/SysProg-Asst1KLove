@@ -122,6 +122,19 @@ void printhTree(hTree* tree){
     h_node* root = hroot(tree);
     descendTree(root);
 }
+void printhList(lList* list){
+    printf("head - %x\ntail - %x\n\n",list->head,list->tail);
+    int i = 0;
+    printf("#%d:",i++);
+    l_node* temp = head(list);
+    printhTree(temp->token);
+    while(temp->prev != NULL){
+        CHECKPREV(temp);//damn something broke
+        printf("#%d:",i++);
+        printhTree(temp->token);
+        temp = prev(temp);
+    }
+}
 
 h_node* descendTree(h_node* node){//recursively goes to the bottom of the tree
     if(node->leaf == BRANCH){

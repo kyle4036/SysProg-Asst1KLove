@@ -40,6 +40,8 @@
     h_node* right(h_node* node);
     h_node* descendTree(h_node* node);
 
+    void printhList(lList* list);
+
     #define CHECKLEFT(x) do{\
         if((x) == NULL){\
             printf("Couldn't left() on line %d! value null...",(__LINE__)-1);\
