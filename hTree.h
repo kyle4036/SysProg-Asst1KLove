@@ -20,7 +20,7 @@
     }hTree;
 
     h_node* createh_node(int leaf, int freq, char* token);
-    h_node* lNode_hNode(l_node node);
+    h_node* lNode_hNode(l_node* node);
     hTree* createTree(h_node* left, h_node* right);
     void addTokenT(lList* data, hTree* tree);
     //hTree* combineTrees(hTree* left, hTree* right);
