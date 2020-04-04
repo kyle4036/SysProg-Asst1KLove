@@ -29,7 +29,7 @@ lList* readInData(int fd){
 
     char* spacePntr = malloc(sizeof(char)*5);
     CHECKMALLOC(spacePntr);
-    *spacePntr = " ";
+    *spacePntr = "_";
 
     char** stringTemp;
     int stringLen = 2;
