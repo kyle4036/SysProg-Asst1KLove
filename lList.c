@@ -167,5 +167,11 @@ void printl_node(l_node* node){
             node->token, node->freq, node->next, node->prev);
 }
 void printlList(lList* list){
+    int i = 0;
+    l_node* temp = list->head;
     printf("head - %x\ntail - %x\n",list->head,list->tail);
+    while(temp->prev != NULL){
+        printf("#%d:",i++);
+        temp = prev(temp);
+    }
 }
