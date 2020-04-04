@@ -76,7 +76,7 @@ void addToken(lList* data,char* token){
             while(next->next != NULL && temp->freq > next->freq)
                 next = next->next;//to bubble up to the correct freq val
 
-            if(temp->freq > data->head->freq)//if next is at the head value
+            if(temp->freq > (data->head).freq)//if next is at the head value
                 swap(temp,next,data);
             else
                 swap(temp,next->prev,data);
