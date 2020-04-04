@@ -85,7 +85,7 @@ void catString(char** stringO,int stringLen,char charTemp){
     *stringO = stringTemp;
 }
 
-hTree* buildTree(lList minHeap){
+hTree* buildTree(lList* minHeap){
     return Null;
 }
 
