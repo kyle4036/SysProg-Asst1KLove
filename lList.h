@@ -33,7 +33,7 @@
 
     #define CHECKPREV(x) do{\
         if((x) == NULL){\
-            printf("Couldn't prev() on line %d! value null...",(__LINE__)-1);\
+            printf("In Function %s: Couldn't prev() on line %d! value null...",__func__,(__LINE__)-1);\
             return NULL;\
         }\
     }while(0)\

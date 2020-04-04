@@ -74,6 +74,27 @@ void freeTree(hTree* tree){
 
 }
 
+void convertlList(lList* list){
+    l_node* temp = list->head;
+    hTree** dpHTree;
+    while(temp->prev != NULL){
+        dpHTree = convertl_node(temp);
+        temp->token = dpHTree;
+        CHECKPREV(temp);//damn something broke
+        temp = temp->prev;
+    }
+}
+hTree** convertl_node(l_node* node){
+    h_node* htemp = lNode_hNode(node);
+    hTree* ttemp = createTree(htemp);
+
+    hTree** temp = malloc(sizeof(hTree**));
+    CHECKMALLOC(temp);
+    *temp = ttemp;
+
+    return temp;
+}
+
 //debugging
 
 h_node* left(h_node* node){
