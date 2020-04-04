@@ -73,6 +73,7 @@ lList* readInData(int fd){
             catString(stringTemp,stringLen,charTemp);
         }
     }
+    return minHeap;
 }
 
 void catString(char** stringO,int stringLen,char charTemp){
