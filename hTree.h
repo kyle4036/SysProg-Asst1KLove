@@ -14,7 +14,7 @@
     typdef struct hTree_{
         h_node* root;
         int freq;
-    }
+    }hTree;
 
     hTree* createTree(h_node* left, h_node* right);
     void addToken(lList* data, hTree* tree);
