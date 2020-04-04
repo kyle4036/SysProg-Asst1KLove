@@ -25,6 +25,15 @@ h_node* createh_node(int leaf, int freq, char* token){
 
     return temp;
 }
+hTree* createTree(h_node* node){
+    hTree* tempTree = malloc(sizeof(hTree));
+    CHECKMALLOC(tempTree);
+
+    tempTree->root = node;
+    tempTree->freq = node->freq;
+
+    return tempTree;
+}
 
 h_node* lNode_hNode(l_node* node){
     h_node* temp = malloc(sizeof(h_node));
@@ -39,15 +48,17 @@ h_node* lNode_hNode(l_node* node){
     return temp;
 }
 
-hTree* createTree(h_node* left, h_node* right){
+//::NOTE: previously createTree()
+hTree* combineTrees(hTree* left, hTree* right){
+
     int totalFreq = left->freq + right->freq;
 
     hTree* tempTree = malloc(sizeof(hTree));
     CHECKMALLOC(tempTree);
 
     h_node* root = createh_node(BRANCH, totalFreq, "BRANCH_ENTITY");
-    root->left = left;
-    root->right = right;
+    root->left = left->root;
+    root->right = right->root;
 
     tempTree->root = root;
     tempTree->freq = totalFreq;
