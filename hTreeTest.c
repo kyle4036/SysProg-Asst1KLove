@@ -46,9 +46,12 @@ int main(int argc, char* argv){
 
     printf("\nmaking 1st tree\n");
 
-    hTree* tree = createTree(htemp1, htemp2);
+    hTree* tree1 = createTree(htemp1);
+    hTree* tree2 = createTree(htemp2);
 
-    printhTree(tree);
+    hTree* tree3 = combineTrees(tree1,tree2);
+
+    printhTree(tree3);
 
     return 0;
 }
