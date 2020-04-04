@@ -67,7 +67,10 @@ void addToken(lList* data,char* token){
         temp = temp->prev;
 
     if(!strncmp(token, temp->token, 50)){
-        if(data->head != data->tail){
+        if(temp == data->head || data->head == data->tail){
+            temp->freq++;
+        }
+        else if(data->head != data->tail){
             l_node* next = temp->next;
 
             temp->freq++;
@@ -75,8 +78,6 @@ void addToken(lList* data,char* token){
             if(next != NULL && temp->freq > next->freq)
                 swapAdj(temp,next,data);
         }
-        else if(data->head == data->tail)
-            temp->freq++;
     }
     else{
         addNode(data,token);
