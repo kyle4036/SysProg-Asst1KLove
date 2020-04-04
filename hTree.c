@@ -42,7 +42,7 @@ hTree* createTree(h_node* left, h_node* right){
 }
 
 void addTokenT(lList* data, hTree* tree){
-    
+
 }
 
 //debugging
@@ -67,7 +67,7 @@ void printh_node(h_node* node){
     printf("address - %x\nleaf - %d\ntoken - '%s'\nfreq - %d\nleft - %x\nright - %x\n\n",
             node,node->leaf, node->token, node->freq, node->left, node->right);
 }
-void printhTree(htree* tree){
+void printhTree(hTree* tree){
     printf("root - %x\nfreq - %d\n\n",tree->root,tree->freq);
     h_node* root = root(tree);
     descendTree(root);
