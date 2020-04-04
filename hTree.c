@@ -58,7 +58,7 @@ h_node* right(h_node* node){
     return node->right;
 }
 
-h_node* root(hTree* tree){
+h_node* hroot(hTree* tree){
     printh_node(tree->root);
     return tree->root;
 }
@@ -69,7 +69,7 @@ void printh_node(h_node* node){
 }
 void printhTree(hTree* tree){
     printf("root - %x\nfreq - %d\n\n",tree->root,tree->freq);
-    h_node* root = root(tree);
+    h_node* root = hroot(tree);
     descendTree(root);
 }
 

@@ -30,7 +30,7 @@
 
     void printh_node(h_node* node);
     void printhTree(hTree* tree);
-    h_node* root(hTree* tree);
+    h_node* hroot(hTree* tree);
     h_node* left(h_node* node);
     h_node* right(h_node* node);
     h_node* descendTree(h_node* node);
