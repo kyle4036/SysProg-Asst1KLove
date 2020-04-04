@@ -41,6 +41,10 @@ hTree* createTree(h_node* left, h_node* right){
     return tempTree;
 }
 
+void addTokenT(lList* data, hTree* tree){
+    
+}
+
 //debugging
 
 h_node* left(h_node* node){
