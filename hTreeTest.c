@@ -18,6 +18,7 @@ int main(int argc, char* argv){
     lList* maxHeap = createList("a");
     addToken(maxHeap,"b");
     addToken(maxHeap,"c");
+    addToken(maxHeap,"c");
     addToken(maxHeap,"d");
     addToken(maxHeap,"d");
     addToken(maxHeap,"d");
@@ -35,9 +36,13 @@ int main(int argc, char* argv){
     printl_node(ltemp1);
     printl_node(ltemp2);
 
-    printf("making tree\n");
+    printf("making h_nodes\n");
 
-    h_node* htemp1 = 
+    h_node* htemp1 = lNode_hNode(ltemp1);
+    h_node* htemp2 = lNode_hNode(ltemp2);
+
+    printh_node(htemp1);
+    printh_node(htemp2);
 
     return 0;
 }

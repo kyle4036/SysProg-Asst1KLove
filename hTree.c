@@ -59,6 +59,10 @@ void addTokenT(lList* data, hTree* tree){
 
 }
 
+void freeTree(hTree* tree){
+    
+}
+
 //debugging
 
 h_node* left(h_node* node){
