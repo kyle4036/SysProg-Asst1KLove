@@ -127,12 +127,15 @@ void printhList(lList* list){
     int i = 0;
     printf("#%d:",i++);
     l_node* temp = head(list);
-    printhTree(temp->token);
+    hTree** dpHTree = temp->token;
+    printhTree(*dpHTree);
+
     while(temp->prev != NULL){
         CHECKPREV(temp);//damn something broke
-        printf("#%d:",i++);
-        printhTree(temp->token);
         temp = temp->prev;
+        dpHTree = temp->token;
+        printf("#%d:",i++);
+        printhTree(*dpHTree);
     }
 }
 
