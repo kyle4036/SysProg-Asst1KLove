@@ -2,7 +2,7 @@ all: fileCompressor.c Huffman.o lList.o hTree.o
 	gcc fileCompressor.c Huffman.o lList.o hTree.o -o fileCompressor
 
 clean:
-	rm fileCompressor; rm db; rm Huffman.o; rm lList.o; rm lListTest;rm hTree.o
+	rm fileCompressor; rm db; rm Huffman.o; rm lList.o; rm lListTest;rm hTree.o;rm hTreeTest
 
 debug: fileCompressor.c d_Huffman.o d_lList.o d_hTree.o
 	gcc -ggdb fileCompressor.c Huffman.o lList.o hTree.o -o db
@@ -42,3 +42,9 @@ testlList: lListTest
 
 lListTest: lListTest.c lList.o
 	gcc -ggdb lListTest.c lList.o -o lListTest
+
+testhTree: hTreeTest
+	gdb hTreeTest
+
+hTreeTest: hTreeTest.c d_hTree.o d_lList.o
+	gcc -ggdb hTreeTest.c hTree.o lList.o -o hTreeTest
