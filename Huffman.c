@@ -18,8 +18,9 @@
 int buildCodeBook(char* fileName, int fd){
     printf("Building codebook for %s!\n", fileName);
 
-    lList* minHeap = readInData(fd);
-    printlList(minHeap);
+    lList* maxHeap = readInData(fd);
+    printlList(maxHeap);
+    hTree* tree = buildTree(maxHeap);
     return 0;
 }
 
@@ -36,12 +37,12 @@ lList* readInData(int fd){
     stringTemp = malloc(sizeof(char*));
     CHECKMALLOC(stringTemp);
 
-    lList* minHeap;
+    lList* maxHeap;
 
     count = read(fd,&charTemp,sizeof(char));
     CHECKREAD(count);
 
-    minHeap = createList(spacePntr);
+    maxHeap = createList(spacePntr);
 
     *stringTemp = malloc(sizeof(char*) * stringLen);
     CHECKMALLOC(*stringTemp);
@@ -52,8 +53,8 @@ lList* readInData(int fd){
         CHECKREAD(count);
 
         if(charTemp == ' '){
-            addToken(minHeap, spacePntr);
-            addToken(minHeap,*stringTemp);
+            addToken(maxHeap, spacePntr);
+            addToken(maxHeap,*stringTemp);
 
             //free(*stringTemp);
             stringTemp = malloc(sizeof(char*));
@@ -73,7 +74,7 @@ lList* readInData(int fd){
             catString(stringTemp,stringLen,charTemp);
         }
     }
-    return minHeap;
+    return maxHeap;
 }
 
 void catString(char** stringO,int stringLen,char charTemp){
@@ -85,7 +86,7 @@ void catString(char** stringO,int stringLen,char charTemp){
     *stringO = stringTemp;
 }
 
-hTree* buildTree(lList* minHeap){
+hTree* buildTree(lList* maxHeap){
     return Null;
 }
 
