@@ -23,7 +23,7 @@ int main(int argc, char* argv){
     addToken(maxHeap,"d");
     addToken(maxHeap,"d");
 
-    printf("\noriginal heap");
+    printf("\noriginal heap\n");
     printlList(maxHeap);
 
     l_node* ltemp1 = popTail(maxHeap);
@@ -47,6 +47,8 @@ int main(int argc, char* argv){
     printf("\nmaking 1st tree\n");
 
     hTree* tree = createTree(htemp1, htemp2);
+
+    printhTree(tree);
 
     return 0;
 }
