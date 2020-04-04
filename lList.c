@@ -70,8 +70,17 @@ void addToken(lList* data,char* token){
         temp->freq++;
         l_node* next = temp->next;
 
-        if(data->head != data->tail && next != NULL && temp->freq > next->freq)
-            swap(temp,next,data);
+        //figure out if the data should be swapped
+        if(data->head != data->tail && next != NULL && temp->freq > next->freq){
+
+            while(next->next != NULL && temp->freq > next->freq)
+                next = next->next;//to bubble up to the correct freq val
+
+            if(temp->freq > data->head->freq)//if next is at the head value
+                swap(temp,next,data);
+            else
+                swap(temp,next->prev,data);
+        }
         /*
         if(temp == data->head || data->head == data->tail){
             temp->freq++;
