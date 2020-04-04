@@ -1,3 +1,8 @@
 to test my lList.c library, I used lListTest.c to generate a basic list
 and then used the gdb to inspect the functions to ensure they work correctly
 --------------------------------------------------------------------------
+
+to test my hTree.c library, I used hTreeTest.c to generate another basic list so that I could
+test the function in hTree using gdb
+
+---------------------------------------------------------------------------
