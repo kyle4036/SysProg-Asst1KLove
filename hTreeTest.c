@@ -15,6 +15,19 @@
 
 
 int main(int argc, char* argv){
+    lList* maxHeap = createList("a");
+    addToken(maxHeap,"b");
+    addToken(maxHeap,"c");
+    addToken(maxHeap,"d");
+    addToken(maxHeap,"d");
+    addToken(maxHeap,"d");
 
+    printlList(maxHeap);
+
+    l_node* ltemp = popTail(maxHeap);
+
+    printlList(maxHeap);
+
+    printl_node(ltemp);
     return 0;
 }
