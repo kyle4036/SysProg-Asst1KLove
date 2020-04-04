@@ -85,6 +85,10 @@ void catString(char** stringO,int stringLen,char charTemp){
     *stringO = stringTemp;
 }
 
+hTree* buildTree(lList minHeap){
+    return Null;
+}
+
 int compress(char* fileName,char* codeBook){
     printf("Compressing %s using %s codebook!\n",fileName, codeBook);
     return 0;
