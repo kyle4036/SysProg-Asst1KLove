@@ -64,15 +64,18 @@ void printh_node(h_node* node){
             node,node->leaf, node->token, node->freq, node->left, node->right);
 }
 void printhTree(htree* tree){
-    printf("root - %x\nfreq - %d",tree->root,tree->freq);
+    printf("root - %x\nfreq - %d\n\n",tree->root,tree->freq);
     h_node* root = root(tree);
     descendTree(root);
 }
 
 h_node* descendTree(h_node* node){//recursively goes to the bottom of the tree
-    if(node->left != NULL)
+    if(node->left != NULL){
+        printf("Left node of %x\n",node);
         descend(left(node));
+    }
     if(node->right != NULL)
+        printf("Right node of %x\n",node);
         descend(right(node));
     return node;
 }
