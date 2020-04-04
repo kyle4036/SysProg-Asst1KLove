@@ -14,7 +14,7 @@
         struct h_node_* right;
     } h_node;
 
-    typdef struct hTree_{
+    typedef struct hTree_{
         h_node* root;
         int freq;
     }hTree;
