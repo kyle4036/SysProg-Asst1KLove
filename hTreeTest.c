@@ -26,6 +26,11 @@ int main(int argc, char* argv){
     printf("\noriginal heap\n");
     printlList(maxHeap);
 
+    printf("\nconverted heap\n");
+    convertlList(maxHeap);
+    printhList(maxHeap);
+
+/*
     l_node* ltemp1 = popTail(maxHeap);
     l_node* ltemp2 = popTail(maxHeap);
 
@@ -52,6 +57,6 @@ int main(int argc, char* argv){
     hTree* tree3 = combineTrees(tree1,tree2);
 
     printhTree(tree3);
-
+*/
     return 0;
 }
