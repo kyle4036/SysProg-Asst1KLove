@@ -27,9 +27,9 @@ lList* readInData(int fd){
     int count;
     char charTemp;
 
-    char* spcPntr = malloc(sizeof(char)*strnlen(" ", 5));
-    CHECKMALLOC(spcPntr);
-    *spcPntr = " ";
+    char* spacePntr = malloc(sizeof(char)*strnlen(" ", 5));
+    CHECKMALLOC(spacePntr);
+    *spacePntr = " ";
 
     char** stringTemp;
     int stringLen = 2;
@@ -41,7 +41,7 @@ lList* readInData(int fd){
     count = read(fd,&charTemp,sizeof(char));
     CHECKREAD(count);
 
-    minHeap = createList(spcPntr);
+    minHeap = createList(spacePntr);
 
     *stringTemp = malloc(sizeof(char*) * stringLen);
     CHECKMALLOC(*stringTemp);
@@ -52,7 +52,7 @@ lList* readInData(int fd){
         CHECKREAD(count);
 
         if(charTemp == ' '){
-            addToken(minHeap, spcPntr);
+            addToken(minHeap, spacePntr);
             addToken(minHeap,*stringTemp);
 
             //free(*stringTemp);
