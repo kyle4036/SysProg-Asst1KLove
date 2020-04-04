@@ -19,6 +19,7 @@ int buildCodeBook(char* fileName, int fd){
     printf("Building codebook for %s!\n", fileName);
 
     lList* minHeap = readInData(fd);
+    printlList(minHeap);
     return 0;
 }
 
