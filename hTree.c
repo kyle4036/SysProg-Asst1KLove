@@ -76,10 +76,10 @@ void printhTree(hTree* tree){
 h_node* descendTree(h_node* node){//recursively goes to the bottom of the tree
     if(node->left != NULL){
         printf("Left node of %x\n",node);
-        descend(left(node));
+        descendTree(left(node));
     }
     if(node->right != NULL)
         printf("Right node of %x\n",node);
-        descend(right(node));
+        descendTree(right(node));
     return node;
 }
