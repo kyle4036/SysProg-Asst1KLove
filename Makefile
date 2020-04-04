@@ -1,11 +1,11 @@
-all: fileCompressor.c Huffman.o lList.o
-	gcc fileCompressor.c Huffman.o lList.o -o fileCompressor
+all: fileCompressor.c Huffman.o lList.o hTree.o
+	gcc fileCompressor.c Huffman.o lList.o hTree.o -o fileCompressor
 
 clean:
 	rm fileCompressor; rm db; rm Huffman.o; rm lList.o; rm lListTest;rm hTree.o
 
-debug: fileCompressor.c d_Huffman.o d_lList.o
-	gcc -ggdb fileCompressor.c Huffman.o lList.o -o db
+debug: fileCompressor.c d_Huffman.o d_lList.o d_hTree.o
+	gcc -ggdb fileCompressor.c Huffman.o lList.o hTree.o -o db
 
 Huffman.o: Huffman.c lList.o
 	gcc -c Huffman.c
