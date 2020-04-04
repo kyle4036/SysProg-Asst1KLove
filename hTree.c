@@ -26,7 +26,7 @@ h_node* createh_node(int leaf, int freq, char* token){
     return temp;
 }
 
-h_node* lNode_hNode(l_node node){
+h_node* lNode_hNode(l_node* node){
     h_node* temp = malloc(sizeof(h_node));
     CHECKMALLOC(temp);
 
@@ -60,7 +60,7 @@ void addTokenT(lList* data, hTree* tree){
 }
 
 void freeTree(hTree* tree){
-    
+
 }
 
 //debugging
