@@ -31,12 +31,13 @@ int main(int argc, char* argv){
     printf("heap minus bottom 2 elements\n");
     printlList(maxHeap);
 
-    printf("bottome 2 elements\n");
+    printf("bottom 2 elements\n");
     printl_node(ltemp1);
     printl_node(ltemp2);
 
     printf("making tree\n");
-    
+
+    h_node* htemp1 = 
 
     return 0;
 }

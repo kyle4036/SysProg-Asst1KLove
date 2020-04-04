@@ -25,6 +25,20 @@ h_node* createh_node(int leaf, int freq, char* token){
 
     return temp;
 }
+
+h_node* lNode_hNode(l_node node){
+    h_node* temp = malloc(sizeof(h_node));
+    CHECKMALLOC(temp);
+
+    temp->leaf = LEAF;
+    temp->freq = node->freq;
+    temp->token = node->token;
+    temp->left = NULL;
+    temp->right = NULL;
+
+    return temp;
+}
+
 hTree* createTree(h_node* left, h_node* right){
     int totalFreq = left->freq + right->freq;
 
