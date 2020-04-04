@@ -93,29 +93,17 @@ void addToken(lList* data,char* token){
 }
 
 void swapAdj(l_node* a,l_node* b,lList* data){
-    l_node* tempNext;
-    l_node* tempPrev;
+    char* tempToken;
+    int tempFreq;
 
-    tempNext = a->next;
-    tempPrev = a->prev;
+    tempToken = a->token;
+    tempFreq = a->freq;
 
-    a->next = tempPrev;
-    a->prev = tempNext;
+    a->token = b->token;
+    a->freq = b->freq;
 
-    tempNext = b->next;
-    tempPrev = b->prev;
-    b->next = tempPrev;
-    b->prev = tempNext;
-
-    if(a->next == NULL)
-        data->head = a;
-    else if(b->next == NULL)
-        data->head = b;
-
-    if(a->prev == NULL)
-        data->tail = a;
-    else if(b->prev == NULL)
-        data->tail = b;
+    b->token = tempToken;
+    b->freq = tempFreq;
 }
 
 void addNode(lList* data,char* token){
