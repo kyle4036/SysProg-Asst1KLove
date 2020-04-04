@@ -37,4 +37,6 @@ hTree* createTree(hTree* left, hTree* right){
 
     tempTree->root = root;
     tempTree->freq = totalFreq;
+
+    return tempTree;
 }
