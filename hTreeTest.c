@@ -36,8 +36,8 @@ int main(int argc, char* argv){
     hTree* tree1 = ltemp1->token;
     hTree* tree2 = ltemp2->token;
 
-    free(ltemp1);
-    free(ltemp2);
+    //free(ltemp1);
+    //free(ltemp2);
 
     hTree* tree3 = combineTrees(tree1, tree2);
 
