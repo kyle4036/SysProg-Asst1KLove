@@ -35,6 +35,10 @@ hTree* createTree(h_node* node){
     return tempTree;
 }
 
+int ishTreeComplete(hList* data){
+    return (data->head == data->tail);
+}
+
 h_node* lNode_hNode(l_node* node){
     h_node* temp = malloc(sizeof(h_node));
     CHECKMALLOC(temp);
