@@ -49,7 +49,10 @@ h_node* lNode_hNode(l_node* node){
 }
 
 l_node* hTree_lNode(hTree* tree){
+    l_node* temp = createl_node(tree);
+    temp->freq = tree->freq;
 
+    return temp;
 }
 
 //::NOTE: previously createTree()
@@ -73,7 +76,46 @@ hTree* combineTrees(hTree* left, hTree* right){
 void addTreeToken(hList* data, hTree* tree){
     int freq = tree->freq;
 
-    l_node* node =
+    l_node* newNode = hTree_lNode(tree);
+    l_node* prev = data->head;
+    l_node* next;
+
+    //incase there is only 1 element in the hList
+    if(data->head == data->tail){
+        if(prev->freq > freq){
+            newNode->next = prev;
+            prev->prev = newNode;
+            data->tail = newNode;
+        }
+        else{
+            newNode->prev = prev;
+            prev->next = newNode;
+            data->head = newNode;
+        }
+        return;
+    }
+
+    while(temp->freq > freq && temp->prev != NULL){
+        prev = prev->prev;
+    }
+    next = prev->next;
+
+    if(next == NULL){
+        newNode->prev = prev;
+        prev->next = newNode;
+        data->head = newNode;
+    }
+    else if(prev->prev == NULL && prev->freq > freq){
+        newNode->next = prev;
+        prev->prev = newNode;
+        data->tail = newNode;
+    }
+    else{
+        newNode->next = next;
+        newNode->prev = prev;
+        next->prev = newNode;
+        prev->next = newNode;
+    }
 }
 
 void freeTree(hTree* tree){
