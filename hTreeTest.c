@@ -39,7 +39,7 @@ int main(int argc, char* argv){
     //free(ltemp1);
     //free(ltemp2);
 
-    hTree* tree3 = combineTrees(*tree1, *tree2);
+    hTree* tree3 = combineTrees(tree1, tree2);
 
     free(tree1);
     free(tree2);
