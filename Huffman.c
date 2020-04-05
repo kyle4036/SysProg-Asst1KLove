@@ -20,7 +20,10 @@ int buildCodeBook(char* fileName, int fd){
     printf("Building codebook for %s!\n", fileName);
 
     lList* maxHeap = readInData(fd);
+    printf("\nAll Data from File organized\n");
     printlList(maxHeap);
+
+    printf("\nTree of Data\n");
     hTree* tree = buildTree(maxHeap);
     printhTree(tree);
     return 0;
