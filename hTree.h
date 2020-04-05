@@ -19,15 +19,20 @@
         int freq;
     }hTree;
 
+    typedef struct hList_{
+        l_node* head;
+        l_node* tail;
+    }hList;
+
     h_node* createh_node(int leaf, int freq, char* token);
     h_node* lNode_hNode(l_node* node);
     hTree* createTree(h_node* node);
     hTree* combineTrees(hTree* left, hTree* right);
 
-    void convertlList(lList* list);
+    hList* convertlList(lList* list);
     hTree** convertl_node(l_node* node);
 
-    void addTokenT(lList* data, hTree* tree);
+    void addTokenT(hList* data, hTree* tree);
 
     void freeTree(hTree* tree);
 
@@ -40,7 +45,7 @@
     h_node* right(h_node* node);
     h_node* descendTree(h_node* node);
 
-    void printhList(lList* list);
+    void printhList(hList* list);
 
     #define CHECKLEFT(x) do{\
         if((x) == NULL){\

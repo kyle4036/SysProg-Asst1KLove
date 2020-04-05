@@ -66,7 +66,7 @@ hTree* combineTrees(hTree* left, hTree* right){
     return tempTree;
 }
 
-void addTokenT(lList* data, hTree* tree){
+void addTokenT(hList* data, hTree* tree){
 
 }
 
@@ -74,7 +74,7 @@ void freeTree(hTree* tree){
 
 }
 
-void convertlList(lList* list){
+hList* convertlList(lList* list){
     l_node* temp = list->head;
     hTree** dpHTree;
     while(temp->prev != NULL){
@@ -85,6 +85,12 @@ void convertlList(lList* list){
     }
     dpHTree = convertl_node(temp);
     temp->token = dpHTree;
+
+    hList* newlist = malloc(sizeof(hList));
+    newList->head = list->head;
+    newList->tail = list->tail;
+
+    return newList;
 }
 hTree** convertl_node(l_node* node){
     h_node* htemp = lNode_hNode(node);
@@ -124,7 +130,7 @@ void printhTree(hTree* tree){
     h_node* root = hroot(tree);
     descendTree(root);
 }
-void printhList(lList* list){
+void printhList(hList* list){
     printf("head - %x\ntail - %x\n\n",list->head,list->tail);
     int i = 0;
     printf("#%d:",i++);
