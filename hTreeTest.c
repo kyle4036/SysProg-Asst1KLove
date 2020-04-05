@@ -30,33 +30,18 @@ int main(int argc, char* argv){
     hList* hHeap = convertlList(maxHeap);
     printhList(hHeap);
 
-/*
-    l_node* ltemp1 = popTail(maxHeap);
-    l_node* ltemp2 = popTail(maxHeap);
+    l_node* ltemp1 = popTail(hHeap);
+    l_node* ltemp2 = popTail(hHeap);
 
-    printf("\nheap minus bottom 2 elements\n");
-    printlList(maxHeap);
+    hTree* tree1 = ltemp1->token;
+    hTree* tree2 = ltemp2->token;
 
-    printf("\nbottom 2 elements\n");
-    printl_node(ltemp1);
-    printl_node(ltemp2);
+    free(ltemp1);
+    free(ltemp2);
 
-    printf("\nmaking h_nodes\n");
-
-    h_node* htemp1 = lNode_hNode(ltemp1);
-    h_node* htemp2 = lNode_hNode(ltemp2);
-
-    printh_node(htemp1);
-    printh_node(htemp2);
-
-    printf("\nmaking 1st tree\n");
-
-    hTree* tree1 = createTree(htemp1);
-    hTree* tree2 = createTree(htemp2);
-
-    hTree* tree3 = combineTrees(tree1,tree2);
+    hTree* tree3 = combineTrees(tree1, tree2);
 
     printhTree(tree3);
-*/
+
     return 0;
 }
