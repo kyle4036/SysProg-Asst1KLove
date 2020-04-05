@@ -82,7 +82,7 @@ void convertlList(lList* list){
         temp->token = dpHTree;
         CHECKPREV(temp);//damn something broke
         temp = temp->prev;
-    }while(temp->prev != NULL)
+    }while(temp->prev != NULL);
 }
 hTree** convertl_node(l_node* node){
     h_node* htemp = lNode_hNode(node);
