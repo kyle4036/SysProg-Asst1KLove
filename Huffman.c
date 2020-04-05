@@ -20,6 +20,8 @@ int buildCodeBook(char* fileName, int fd){
     printf("Building codebook for %s!\n", fileName);
 
     lList* maxHeap = readInData(fd);
+    close(fd);
+    
     printf("\nAll Data from File organized\n");
     printlList(maxHeap);
 
