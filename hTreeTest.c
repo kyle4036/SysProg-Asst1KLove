@@ -43,6 +43,8 @@ int main(int argc, char* argv){
 
     free(tree1);
     free(tree2);
+    free(ltemp1);
+    free(ltemp2);
 
     printf("\nnew tree from bottom 2 trees\n");
     printhTree(tree3);
