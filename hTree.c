@@ -36,7 +36,8 @@ hTree* createTree(h_node* node){
 }
 
 int ishTreeComplete(hList* data){
-    return (data->head == data->tail);
+    l_node* temp = data->head;
+    return temp->prev == NULL;
 }
 
 h_node* lNode_hNode(l_node* node){
