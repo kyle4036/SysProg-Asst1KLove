@@ -38,6 +38,7 @@
     l_node* popTail(hList* data);
 
     void freeTree(hTree* tree);
+    void destroyh_nodes(h_node* current);
 
 //debugging tools
 

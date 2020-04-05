@@ -56,6 +56,7 @@ l_node* hTree_lNode(hTree* tree){
 }
 
 //::NOTE: previously createTree()
+//After combining trees the previous trees are freed
 hTree* combineTrees(hTree* left, hTree* right){
 
     int totalFreq = left->freq + right->freq;
@@ -69,6 +70,11 @@ hTree* combineTrees(hTree* left, hTree* right){
 
     tempTree->root = root;
     tempTree->freq = totalFreq;
+
+    free(left);
+    free(right);
+    *left = NULL;
+    *right = NULL;
 
     return tempTree;
 }
@@ -118,8 +124,18 @@ void addTreeToken(hList* data, hTree* tree){
     }
 }
 
+//Don't know if I need to free the tokens yet
 void freeTree(hTree* tree){
+    destroyh_nodes(tree->root);
+    free(tree);
+}
+void destroyh_nodes(h_node* current){
+    if(current->left != NULL)
+        destroyh_nodes(current->left);
+    if(current->right != NULL)
+        destroyh_nodes(current->right);
 
+    free(current);
 }
 
 hList* convertlList(lList* list){
