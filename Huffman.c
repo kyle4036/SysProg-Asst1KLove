@@ -22,6 +22,7 @@ int buildCodeBook(char* fileName, int fd){
     lList* maxHeap = readInData(fd);
     printlList(maxHeap);
     hTree* tree = buildTree(maxHeap);
+    printhTree(tree);
     return 0;
 }
 
@@ -88,6 +89,28 @@ void catString(char** stringO,int stringLen,char charTemp){
 }
 
 hTree* buildTree(lList* maxHeap){
+    hList* hHeap = convertlList(maxHeap);
+    hTree* temptree;
+
+    l_node* node1;
+    l_node* node2;
+
+    while(!ishTreeComplete(hHeap)){
+        node1 = popTail(hHeap);
+        node2 = popTail(hHeap);
+
+        if(node1->freq < node2->freq)
+            temptree = combineTrees(node1->token, node2->token);
+        else
+            temptree = combineTrees(node2->token, node1->token);
+
+        free(node1);
+        free(node2);
+
+        addTreeToken(hHeap,temptree);
+    }
+
+
     return Null;
 }
 
