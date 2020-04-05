@@ -26,6 +26,7 @@
 
     h_node* createh_node(int leaf, int freq, char* token);
     h_node* lNode_hNode(l_node* node);
+    l_node* hTree_lNode(hTree* tree);
     hTree* createTree(h_node* node);
     hTree* combineTrees(hTree* left, hTree* right);
 

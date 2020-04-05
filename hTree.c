@@ -48,6 +48,10 @@ h_node* lNode_hNode(l_node* node){
     return temp;
 }
 
+l_node* hTree_lNode(hTree* tree){
+
+}
+
 //::NOTE: previously createTree()
 hTree* combineTrees(hTree* left, hTree* right){
 
@@ -67,7 +71,9 @@ hTree* combineTrees(hTree* left, hTree* right){
 }
 
 void addTreeToken(hList* data, hTree* tree){
+    int freq = tree->freq;
 
+    l_node* node =
 }
 
 void freeTree(hTree* tree){
