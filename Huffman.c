@@ -111,7 +111,7 @@ hTree* buildTree(lList* maxHeap){
     }
 
 
-    return Null;
+    return temptree;
 }
 
 int compress(char* fileName,char* codeBook){
