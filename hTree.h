@@ -30,7 +30,7 @@
     hTree* combineTrees(hTree* left, hTree* right);
 
     hList* convertlList(lList* list);
-    hTree** convertl_node(l_node* node);
+    hTree* convertl_node(l_node* node);
 
     void addTokenT(hList* data, hTree* tree);
 

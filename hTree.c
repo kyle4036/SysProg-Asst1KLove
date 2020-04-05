@@ -76,15 +76,15 @@ void freeTree(hTree* tree){
 
 hList* convertlList(lList* list){
     l_node* temp = list->head;
-    hTree** dpHTree;
+    hTree* tree;
     while(temp->prev != NULL){
-        dpHTree = convertl_node(temp);
-        temp->token = dpHTree;
+        tree = convertl_node(temp);
+        temp->token = tree;
         CHECKPREV(temp);//damn something broke
         temp = temp->prev;
     }
-    dpHTree = convertl_node(temp);
-    temp->token = dpHTree;
+    tree = convertl_node(temp);
+    temp->token = tree;
 
     hList* newlist = malloc(sizeof(hList));
     newlist->head = list->head;
@@ -92,13 +92,13 @@ hList* convertlList(lList* list){
 
     return newlist;
 }
-hTree** convertl_node(l_node* node){
+hTree* convertl_node(l_node* node){
     h_node* htemp = lNode_hNode(node);
-    hTree* ttemp = createTree(htemp);
+    hTree* temp = createTree(htemp);
 
-    hTree** temp = malloc(sizeof(hTree**));
-    CHECKMALLOC(temp);
-    *temp = ttemp;
+    //hTree** temp = malloc(sizeof(hTree**));
+    //CHECKMALLOC(temp);
+    //*temp = ttemp;
 
     return temp;
 }
@@ -142,15 +142,15 @@ void printhList(hList* list){
     int i = 0;
     printf("#%d:",i++);
     l_node* temp = list->head;
-    hTree** dpHTree = temp->token;
-    printhTree(*dpHTree);
+    hTree* tree = temp->token;
+    printhTree(tree);
 
     while(temp->prev != NULL){
         CHECKPREV(temp);//damn something broke
         temp = temp->prev;
-        dpHTree = temp->token;
+        tree = temp->token;
         printf("#%d:",i++);
-        printhTree(*dpHTree);
+        printhTree(tree);
     }
 }
 
