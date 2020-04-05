@@ -33,8 +33,8 @@ int main(int argc, char* argv){
     l_node* ltemp1 = popTail(hHeap);
     l_node* ltemp2 = popTail(hHeap);
 
-    hTree** tree1 = ltemp1->token;
-    hTree** tree2 = ltemp2->token;
+    hTree* tree1 = ltemp1->token;
+    hTree* tree2 = ltemp2->token;
 
     //free(ltemp1);
     //free(ltemp2);
