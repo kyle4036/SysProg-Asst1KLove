@@ -33,6 +33,8 @@
     hList* convertlList(lList* list);
     hTree* convertl_node(l_node* node);
 
+    int ishTreeComplete(hList* data);
+
     void addTreeToken(hList* data, hTree* tree);
 
     l_node* popTail(hList* data);
