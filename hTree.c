@@ -77,8 +77,8 @@ hTree* combineTrees(hTree* left, hTree* right){
 
     free(left);
     free(right);
-    *left = NULL;
-    *right = NULL;
+    //*left = NULL;
+    //*right = NULL;
 
     return tempTree;
 }
