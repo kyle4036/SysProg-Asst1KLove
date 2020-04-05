@@ -128,7 +128,7 @@ void printhList(lList* list){
     printf("head - %x\ntail - %x\n\n",list->head,list->tail);
     int i = 0;
     printf("#%d:",i++);
-    l_node* temp = head(list);
+    l_node* temp = list->head;
     hTree** dpHTree = temp->token;
     printhTree(*dpHTree);
 
