@@ -87,10 +87,10 @@ hList* convertlList(lList* list){
     temp->token = dpHTree;
 
     hList* newlist = malloc(sizeof(hList));
-    newList->head = list->head;
-    newList->tail = list->tail;
+    newlist->head = list->head;
+    newlist->tail = list->tail;
 
-    return newList;
+    return newlist;
 }
 hTree** convertl_node(l_node* node){
     h_node* htemp = lNode_hNode(node);
