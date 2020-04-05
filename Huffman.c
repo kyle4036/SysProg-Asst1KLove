@@ -106,9 +106,9 @@ hTree* buildTree(lList* maxHeap){
 
         free(node1);
         free(node2);
-        
+
         if(hListIsEmpty(hHeap))
-            return tempTree;
+            return temptree;
         else
             addTreeToken(hHeap,temptree);
     }
