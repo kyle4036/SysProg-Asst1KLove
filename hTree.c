@@ -66,7 +66,7 @@ hTree* combineTrees(hTree* left, hTree* right){
     return tempTree;
 }
 
-void addTokenT(hList* data, hTree* tree){
+void addTreeToken(hList* data, hTree* tree){
 
 }
 

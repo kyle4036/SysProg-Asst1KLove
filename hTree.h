@@ -32,7 +32,7 @@
     hList* convertlList(lList* list);
     hTree* convertl_node(l_node* node);
 
-    void addTokenT(hList* data, hTree* tree);
+    void addTreeToken(hList* data, hTree* tree);
 
     l_node* popTail(hList* data);
 
