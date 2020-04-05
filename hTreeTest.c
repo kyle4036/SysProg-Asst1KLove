@@ -33,13 +33,16 @@ int main(int argc, char* argv){
     l_node* ltemp1 = popTail(hHeap);
     l_node* ltemp2 = popTail(hHeap);
 
-    hTree* tree1 = ltemp1->token;
-    hTree* tree2 = ltemp2->token;
+    hTree** tree1 = ltemp1->token;
+    hTree** tree2 = ltemp2->token;
 
     //free(ltemp1);
     //free(ltemp2);
 
-    hTree* tree3 = combineTrees(tree1, tree2);
+    hTree* tree3 = combineTrees(*tree1, *tree2);
+
+    free(tree1);
+    free(tree2);
 
     printf("\nnew tree from bottom 2 trees\n");
     printhTree(tree3);
