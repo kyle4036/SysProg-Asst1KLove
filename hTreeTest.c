@@ -49,5 +49,9 @@ int main(int argc, char* argv){
     printf("\nnew tree from bottom 2 trees\n");
     printhTree(tree3);
 
+    addTreeToken(hHeap,tree3);
+    printf("\nappended new tree onto heap\n");
+    printhList(hHeap);
+
     return 0;
 }
