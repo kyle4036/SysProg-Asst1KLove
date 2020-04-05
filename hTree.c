@@ -102,6 +102,13 @@ hTree** convertl_node(l_node* node){
 
     return temp;
 }
+l_node* popTail(hList* data){
+    l_node* temp = data->tail;
+    data->tail = temp->next;
+    l_node* tail = data->tail;
+    tail->prev = NULL;
+    return temp;
+}
 
 //debugging
 

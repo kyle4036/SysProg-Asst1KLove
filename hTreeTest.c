@@ -27,8 +27,8 @@ int main(int argc, char* argv){
     printlList(maxHeap);
 
     printf("\nconverted heap\n");
-    convertlList(maxHeap);
-    printhList(maxHeap);
+    hList* hHeap = convertlList(maxHeap);
+    printhList(hHeap);
 
 /*
     l_node* ltemp1 = popTail(maxHeap);

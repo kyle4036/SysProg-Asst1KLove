@@ -34,6 +34,8 @@
 
     void addTokenT(hList* data, hTree* tree);
 
+    l_node* popTail(hList* data);
+
     void freeTree(hTree* tree);
 
 //debugging tools

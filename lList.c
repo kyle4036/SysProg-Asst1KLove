@@ -53,14 +53,6 @@ void removeTail(lList* data){
     free(temp);
 }
 
-l_node* popTail(lList* data){
-    l_node* temp = data->tail;
-    data->tail = temp->next;
-    l_node* tail = data->tail;
-    tail->prev = NULL;
-    return temp;
-}
-
 /*
 void sortList(lList data){
   //defunct
