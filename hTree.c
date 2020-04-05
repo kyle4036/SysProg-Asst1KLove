@@ -77,12 +77,14 @@ void freeTree(hTree* tree){
 void convertlList(lList* list){
     l_node* temp = list->head;
     hTree** dpHTree;
-    do{
+    while(temp->prev != NULL){
         dpHTree = convertl_node(temp);
         temp->token = dpHTree;
         CHECKPREV(temp);//damn something broke
         temp = temp->prev;
-    }while(temp->prev != NULL);
+    }
+    dpHTree = convertl_node(temp);
+    temp->token = dpHTree;
 }
 hTree** convertl_node(l_node* node){
     h_node* htemp = lNode_hNode(node);
