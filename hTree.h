@@ -34,6 +34,7 @@
     hTree* convertl_node(l_node* node);
 
     int ishTreeComplete(hList* data);
+    int hListIsEmpty(hList* data);
 
     void addTreeToken(hList* data, hTree* tree);
 

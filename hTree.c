@@ -39,6 +39,9 @@ int ishTreeComplete(hList* data){
     l_node* temp = data->head;
     return temp->prev == NULL;
 }
+int hListIsEmpty(hList* data){
+    return data->head == NULL;
+}
 
 h_node* lNode_hNode(l_node* node){
     h_node* temp = malloc(sizeof(h_node));
@@ -174,6 +177,13 @@ hTree* convertl_node(l_node* node){
 l_node* popTail(hList* data){
     l_node* temp = data->tail;
     data->tail = temp->next;
+
+    if(data->tail == NULL){
+        data->head = NULL;
+        return temp;
+    }
+
+
     l_node* tail = data->tail;
     tail->prev = NULL;
     return temp;
