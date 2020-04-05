@@ -41,8 +41,6 @@ int main(int argc, char* argv){
 
     hTree* tree3 = combineTrees(tree1, tree2);
 
-    free(tree1);
-    free(tree2);
     free(ltemp1);
     free(ltemp2);
 
