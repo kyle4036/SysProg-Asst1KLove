@@ -95,7 +95,7 @@ void addTreeToken(hList* data, hTree* tree){
         return;
     }
 
-    while(temp->freq > freq && temp->prev != NULL){
+    while(prev->freq > freq && prev->prev != NULL){
         prev = prev->prev;
     }
     next = prev->next;
