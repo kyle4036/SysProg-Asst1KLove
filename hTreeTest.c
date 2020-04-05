@@ -41,6 +41,7 @@ int main(int argc, char* argv){
 
     hTree* tree3 = combineTrees(tree1, tree2);
 
+    printf("\nnew tree from bottom 2 trees\n");
     printhTree(tree3);
 
     return 0;
