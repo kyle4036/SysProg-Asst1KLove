@@ -142,7 +142,7 @@ void writeData(hTree* tree){
     //int count;
     int sLen = 2;
     char* tempString = malloc(sizeof(char*) * sLen);
-    tempString = "";
+    //tempString = "";
     CHECKMALLOC(tempString);
 
     h_node* tempNode = tree->root;
@@ -153,7 +153,7 @@ void writeData(hTree* tree){
 void writeTree(h_node* currentNode,int fd,char* stringO,int sLen){
     sLen++;
     char* newString = malloc(sizeof(char*)*sLen);
-    strcat(newString,stringO);
+    strcpy(newString,stringO);
 
     if(currentNode->leaf != LEAF){
         if(currentNode->right != NULL){
