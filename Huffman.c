@@ -135,11 +135,53 @@ void writeData(hTree* tree){
             printf("\nCodebook already exists\n");
             exit(1);
         }
-        printf("\ncouldnt create HuffmanCodebook: sorry\n");
+        printf("\ncouldn't create HuffmanCodebook: sorry\n");
         exit(1);
     }
 
+    //int count;
+    int sLen = 2;
+    char* tempString = malloc(sizeof(char*) * sLen);
+    tempString = "";
+    CHECKMALLOC(tempString);
+
+    h_node* tempNode = tree->root;
+
+    writeTree(tempNode, fd,tempString, sLen);
+
 }
+void writeTree(h_node* currentNode,int fd,char* stringO,int sLen){
+    sLen++;
+    char* newString = malloc(sizeof(char*)*sLen);
+
+    if(currentNode->leaf != LEAF){
+        if(currentNode->right != NULL){
+            newString = strncat(stringO,"0",1);
+            writeTree(currentNode->right, fd,newString,sLen);
+        }
+        if(currentNode->left != NULL){
+            newString = strncat(stringO,"1",1);
+            writeTree(currentNode->left, fd,newString,sLen);
+        }
+    }
+    else{
+        int lineLength = strnlen(currentNode->token) + strnlen(stringO) + 5;
+        char* line = malloc(sizeof(char*) * lineLength);
+        CHECKMALLOC(line);
+
+        strcpy(line,stringO);
+        strcat(line,"\t");
+        strcat(line,currentNode->token);
+        strcat(line,"\n");
+
+        int count = write(fd,line,lineLength);
+        while(count < lineLength){
+            count += write(fd,line+count,lineLength);
+        }
+    }
+}
+
+
 
 int compress(char* fileName,char* codeBook){
     printf("Compressing %s using %s codebook!\n",fileName, codeBook);

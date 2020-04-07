@@ -13,6 +13,7 @@
     void catString(char** stringO,int stringLen,char charTemp);
     hTree* buildTree(lList* minHeap);
     void writeData(hTree* tree);
+    void writeTree(h_node* currentNode,int fd,char** stringO,int sLen);
 
     char* flagToString(char* flag);
 
