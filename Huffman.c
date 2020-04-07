@@ -128,8 +128,17 @@ hTree* buildTree(lList* maxHeap){
 }
 
 void writeData(hTree* tree){
+    int fd = open("HuffmanCodebook",O_WRONLY | O_CREAT,S_IRWXU|S_IRWXG);
 
-    
+    if(fd == -1){
+        if(errno == EEXIST){
+            printf("\nCodebook already exists\n");
+            exit(1);
+        }
+        printf("\ncouldnt create HuffmanCodebook: sorry\n");
+        exit(1);
+    }
+
 }
 
 int compress(char* fileName,char* codeBook){
