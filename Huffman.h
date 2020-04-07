@@ -12,6 +12,7 @@
     lList* readInData(int fd);
     void catString(char** stringO,int stringLen,char charTemp);
     hTree* buildTree(lList* minHeap);
+    void writeData(hTree* tree);
 
     char* flagToString(char* flag);
 

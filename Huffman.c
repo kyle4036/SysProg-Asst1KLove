@@ -17,17 +17,22 @@
 //char* flagToString(char* flag);
 
 int buildCodeBook(char* fileName, int fd){
-    printf("Building codebook for %s!\n", fileName);
+    printf("\nBuilding codebook for %s!\n", fileName);
 
     lList* maxHeap = readInData(fd);
     close(fd);
-    
+
     printf("\nAll Data from File organized\n");
     printlList(maxHeap);
 
     printf("\nTree of Data\n");
     hTree* tree = buildTree(maxHeap);
     printhTree(tree);
+
+    printf("\nWriting data to HuffmanCodebook\n");
+    writeData(tree);
+
+
     return 0;
 }
 
@@ -120,6 +125,11 @@ hTree* buildTree(lList* maxHeap){
 
 
     return temptree;
+}
+
+void writeData(hTree* tree){
+
+    
 }
 
 int compress(char* fileName,char* codeBook){
