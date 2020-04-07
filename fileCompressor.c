@@ -82,14 +82,22 @@ int branch(char* flag, char* fileName, char* codeBook){
         int fd = open(fileName, O_RDONLY);
 
         if(fd == -1)
-            improperName();
+            improperName(fileName);
 
         buildCodeBook(fileName,fd);
         close(fd);
       }
 
     else if(!strncmp(flag, "-c",3)){
-        compress(fileName, codeBook);
+        //compress(fileName, codeBook);
+        int fd1 = open(fileName, O_RDONLY);
+        int fd2 = open(codeBook, O_RDONLY);
+        if(fd1 == -1)
+            improperName(fileName);
+        if(fd2 == -1)
+            improperName(codeBook);
+
+        compress(fileName, codeBook,fd1,fd2);
     }
     else if(!strncmp(flag, "-d",3)){
         decompress(fileName, codeBook);

@@ -5,7 +5,7 @@
 #define HUFFMAN_H
 
     int buildCodeBook(char* fileName, int fd);
-    int compress(char* fileName,char* codeBook);
+    int compress(char* fileName,char* codeBook,int fn, int cb);
     int decompress(char* fileName,char* codeBook);
     int recursive(char* pathName, char* flag,char* codeBook);
 

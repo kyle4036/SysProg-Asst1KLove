@@ -185,7 +185,7 @@ void writeTree(h_node* currentNode,int fd,char* stringO,int sLen){
 
 
 
-int compress(char* fileName,char* codeBook){
+int compress(char* fileName,char* codeBook,int fn,int cb){
     printf("Compressing %s using %s codebook!\n",fileName, codeBook);
     return 0;
 }
