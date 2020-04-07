@@ -140,14 +140,14 @@ void writeData(hTree* tree){
     }
 
     //int count;
-    int sLen = 2;
+    int sLen = 3;
     char* tempString = malloc(sizeof(char*) * sLen);
-    //tempString = "";
+    tempString = " \0";
     CHECKMALLOC(tempString);
 
     h_node* tempNode = tree->root;
 
-    writeTree(tempNode, fd,'\0', sLen);
+    writeTree(tempNode, fd,, sLen);
 
 }
 void writeTree(h_node* currentNode,int fd,char* stringO,int sLen){
