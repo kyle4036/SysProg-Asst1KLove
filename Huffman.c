@@ -165,7 +165,7 @@ void writeTree(h_node* currentNode,int fd,char* stringO,int sLen){
         }
     }
     else{
-        int lineLength = strnlen(currentNode->token) + strnlen(stringO) + 5;
+        int lineLength = strnlen(currentNode->token,50) + strnlen(stringO,50) + 5;
         char* line = malloc(sizeof(char*) * lineLength);
         CHECKMALLOC(line);
 
