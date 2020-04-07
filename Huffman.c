@@ -147,7 +147,7 @@ void writeData(hTree* tree){
 
     h_node* tempNode = tree->root;
 
-    writeTree(tempNode, fd,tempString, sLen);
+    writeTree(tempNode, fd,'\0', sLen);
 
 }
 void writeTree(h_node* currentNode,int fd,char* stringO,int sLen){
