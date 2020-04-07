@@ -153,14 +153,15 @@ void writeData(hTree* tree){
 void writeTree(h_node* currentNode,int fd,char* stringO,int sLen){
     sLen++;
     char* newString = malloc(sizeof(char*)*sLen);
+    strcat(newString,stringO);
 
     if(currentNode->leaf != LEAF){
         if(currentNode->right != NULL){
-            newString = strncat(stringO,"0",1);
+            strncat(newString,"0",1);
             writeTree(currentNode->right, fd,newString,sLen);
         }
         if(currentNode->left != NULL){
-            newString = strncat(stringO,"1",1);
+            strncat(newString,"1",1);
             writeTree(currentNode->left, fd,newString,sLen);
         }
     }
@@ -179,6 +180,7 @@ void writeTree(h_node* currentNode,int fd,char* stringO,int sLen){
             count += write(fd,line+count,lineLength);
         }
     }
+    free(newString);
 }
 
 
